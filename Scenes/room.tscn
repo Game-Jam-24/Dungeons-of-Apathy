@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dksitk5onvtpb"]
+
+[ext_resource type="TileSet" uid="uid://b80oj70dj3fip" path="res://Assets/Tileset/SimpleTileset.tres" id="1_182ov"]
+
+[node name="Dungeon" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+tile_set = ExtResource("1_182ov")
+format = 2
