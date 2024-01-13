@@ -27,7 +27,19 @@ The objective will be some McGuffin that gives the spreading entity its "power".
 
 ## GDD Mock from Makerizms
 
-placeholder
+Finalizing (prototype 1):
+Procedurally generated rooms (like binding of Isacc)
+Hub room disconnected from the dungeons
+Shopkeeper has weapon options (like Hades)
+Saving souls from the dungeon (souls are connected to lives and give you buffs/debuffs)
+Final boss (?)
+Spreading entity (spawns monsters, potential name: apathy)
+Abilities learned from notes (iteration 2)
+Folk hero vs gods
+Theme: heroes throughout the ages
+Notes left by fallen heroes
+Art style: 2D pixel art 32x32, character- modern times, dungeon- the deeper you go the order the architecture
+
 
 ## GDD Mock from Bark
 
