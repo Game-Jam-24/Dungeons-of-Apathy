@@ -18,7 +18,7 @@ func _ready():
 
 func generate_apathy_seeds():
 		for spawnerNum in spawnerNumProbability[randf_range(0,spawnerNumProbability.size())]:
-			tilemap.set_cell(0, apathySeedSpawn, 4, atlasCoordsArray)
+			tilemap.set_cell(0, apathySeedSpawn, 1, atlasCoordsArray)
 			apathySeedSpawn = Vector2i(randf_range(0,40), randf_range(0,22))
 			x = apathySeedSpawn.x
 			y = apathySeedSpawn.y
@@ -27,3 +27,7 @@ func generate_apathy_seeds():
 func _process(delta):
 	if $Timer.is_stopped() == true:
 		$Timer.start(1)
+
+func _input(event):
+	if event.is_action_pressed("ui_accept") and GlobalVariables.DEBUG:
+		get_tree().reload_current_scene()

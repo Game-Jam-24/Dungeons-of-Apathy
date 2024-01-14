@@ -11,7 +11,7 @@ func generate_level():
 	var walker = Walker.new(borders.get_center(), borders)
 	var map = walker.walk(500)
 	walker.queue_free()
-	tileMap.set_cells_terrain_connect(1,map,0,-1)
+	tileMap.set_cells_terrain_connect(1, map, 0, -1)
 
 func _input(event):
 	if event.is_action_pressed("ui_accept") and GlobalVariables.DEBUG:
