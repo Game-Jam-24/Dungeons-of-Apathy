@@ -3,6 +3,7 @@ extends CharacterBody2D
 var speed = GlobalVariables.speed
 var accel = GlobalVariables.movementAcceleration
 
+
 var input: Vector2
 
 func get_input():

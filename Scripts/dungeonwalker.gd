@@ -15,20 +15,20 @@ func _init(starting_position, new_borders):
 
 func walk(steps):
   for step in steps:
-    if randf() <= 0.25 or steps_since_turn >= 4:
-      change_direction()
-    if step():
-      step_history.append(position)
-    else:
-      change_direction()
+	if randf() <= 0.25 or steps_since_turn >= 4:
+	  change_direction()
+	if step():
+	  step_history.append(position)
+	else:
+	  change_direction()
   return step_history
 
 func step():
   var target_position = position + direction
   if borders.has_point(target_position):
-    steps_since_turn += 1
-    position = target_position
-    return true
+	steps_since_turn += 1
+	position = target_position
+	return true
   return false
 
 func change_direction():
@@ -38,4 +38,4 @@ func change_direction():
   directions.shuffle()
   direction = directions.pop_front()
   while not borders.has_point(position + direction):
-    direction = directions.pop_front()
+	direction = directions.pop_front()
