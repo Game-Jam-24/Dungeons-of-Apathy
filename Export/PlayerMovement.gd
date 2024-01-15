@@ -20,5 +20,5 @@ func _process(delta):
 	velocity = lerp(velocity, input * speed, delta * accel) #smooths out the movement
 	
 	speed = GlobalVariables.speed
-	if GlobalVariables.DEBUG: #global toggleable debug
-		print_debug(input)
+	#if GlobalVariables.DEBUG: #global toggleable debug
+		#print_debug(input)

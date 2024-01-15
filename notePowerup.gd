@@ -23,6 +23,3 @@ func _input(event):
 
 func _on_timer_timeout():
 	queue_free()
-
-func _process(delta):
-	$Timer.time_left
