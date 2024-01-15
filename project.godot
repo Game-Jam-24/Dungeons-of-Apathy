@@ -17,6 +17,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalVariables="*res://Scripts/globals.gd"
+Level="*res://Scripts/Singletons/level.gd"
+Global="*res://Scripts/Singletons/global.gd"
+Player="*res://Scripts/Singletons/player.gd"
 
 [display]
 
