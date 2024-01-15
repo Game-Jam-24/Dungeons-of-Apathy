@@ -1,6 +1,6 @@
 extends Node
 
-const DEBUG = true
+const DEBUG = false
 
 const DIRECTIONS = [Vector2.UP,Vector2.DOWN,Vector2.LEFT,Vector2.RIGHT]
 
