@@ -1,16 +1,18 @@
 extends Node
-class_name Walker
+class_name Walker #creates the Walker class
 
-var position = Vector2.ZERO
+# WALKER CLASS
+
+var position = Vector2.ZERO # Vector2(0,0)
 var direction = Vector2.RIGHT
 var borders = Rect2()
-var step_history = []
-var steps_since_turn = 0
+var step_history = [] # keeps track of all the steps that have been made
+var steps_since_turn = 0 # counts the step since the walker started
 
-func _init(starting_position, new_borders):
+func _init(starting_position, new_borders): # is used to construct a new Walker outside of this script
 	assert(new_borders.has_point(starting_position))
-	position = starting_position
-	step_history.append(position)
+	position = starting_position # sets the current position as starting position
+	step_history.append(position) # adds steps to the tracker
 	borders = new_borders
 
 func walk(steps):
