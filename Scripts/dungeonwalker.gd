@@ -35,7 +35,7 @@ func step():
 
 func change_direction():
 	steps_since_turn = 0
-	var directions = GlobalVariables.DIRECTIONS.duplicate()
+	var directions = Global.DIRECTIONS.duplicate()
 	directions.erase(direction)
 	directions.shuffle()
 	direction = directions.pop_front()

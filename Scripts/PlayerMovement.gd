@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-var speed = GlobalVariables.speed
-var accel = GlobalVariables.movementAcceleration
+var speed = Player.speed
+var accel = Player.movementAcceleration
 
 
 var input: Vector2
@@ -19,6 +19,6 @@ func _process(delta):
 	
 	velocity = lerp(velocity, input * speed, delta * accel) #smooths out the movement
 	
-	speed = GlobalVariables.speed
-	#if GlobalVariables.DEBUG: #global toggleable debug
+	speed = Player.speed
+	#if Global.DEBUG: #global toggleable debug
 		#print_debug(input)

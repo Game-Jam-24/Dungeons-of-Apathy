@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var playerPos = Vector2.ZERO
-var speed = GlobalVariables.gridSpeed
+var speed = Player.gridSpeed
 
 func _input(event):
 	if event.is_action_pressed("ui_right_grid"):

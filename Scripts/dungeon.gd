@@ -14,5 +14,5 @@ func generate_level():
 	tileMap.set_cells_terrain_connect(1, map, 0, -1) #creates a tileset terrain path alon the walker's path
 
 func _input(event):
-	if event.is_action_pressed("ui_accept") and GlobalVariables.DEBUG: #global toggleable debug
+	if event.is_action_pressed("ui_accept") and Global.DEBUG: #global toggleable debug
 		get_tree().reload_current_scene() #resets scene with ENTER

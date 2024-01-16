@@ -43,7 +43,7 @@ func _process(delta):
 	print_debug(apathyScore)
 
 func _input(event):
-	if event.is_action_pressed("ui_accept") and GlobalVariables.DEBUG:
+	if event.is_action_pressed("ui_accept") and Global.DEBUG:
 		get_tree().reload_current_scene()
 
 func _on_timer_timeout():
