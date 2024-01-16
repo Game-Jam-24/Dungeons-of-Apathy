@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ggqq2bo2n6ms"
-path="res://.godot/imported/Powerup placeholder.png-b52627d4162a70c85eb67761240d495a.ctex"
+path="res://.godot/imported/Powerup placeholder.png-7a4ed6c86915755c1c1330b0b880fd4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Export/Powerup placeholder.png"
-dest_files=["res://.godot/imported/Powerup placeholder.png-b52627d4162a70c85eb67761240d495a.ctex"]
+source_file="res://Assets/Sprites/Powerup placeholder.png"
+dest_files=["res://.godot/imported/Powerup placeholder.png-7a4ed6c86915755c1c1330b0b880fd4e.ctex"]
 
 [params]
 
