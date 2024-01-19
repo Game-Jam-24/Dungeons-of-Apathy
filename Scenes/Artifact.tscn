@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://chdilqssv5cpm"]
+[gd_scene load_steps=23 format=3 uid="uid://qnp1arl2bgof"]
 
 [ext_resource type="Texture2D" uid="uid://r8phorpx7tml" path="res://Assets/Animations/Artifact animation/Artifact animation_0001.png" id="1_jq3py"]
 [ext_resource type="Texture2D" uid="uid://mc5h3hsdiqq6" path="res://Assets/Animations/Artifact animation/Artifact animation_0002.png" id="2_8t508"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bhtnwxhlt40ey" path="res://Assets/Animations/Artifact animation/Artifact animation_0006.png" id="6_236no"]
 [ext_resource type="Texture2D" uid="uid://d4fdwsgup6n1m" path="res://Assets/Animations/Artifact animation/Artifact animation_0007.png" id="7_owodb"]
 [ext_resource type="Texture2D" uid="uid://dgt16y0bdxgqr" path="res://Assets/Animations/Artifact animation/Artifact animation_0008.png" id="8_qcw2e"]
+[ext_resource type="Texture2D" uid="uid://cdqttdfikt8gc" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0000.png" id="9_3xp0h"]
 [ext_resource type="Script" path="res://Scripts/Artifact.gd" id="9_6riqk"]
 [ext_resource type="Texture2D" uid="uid://poxglok0xxhs" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0001.png" id="9_jm3qt"]
 [ext_resource type="Texture2D" uid="uid://llfummxesf1c" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0002.png" id="10_vtbcg"]
@@ -54,6 +55,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("9_3xp0h")
+}, {
+"duration": 1.0,
 "texture": ExtResource("9_jm3qt")
 }, {
 "duration": 1.0,
@@ -96,10 +100,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Artifact" type="AnimatedSprite2D"]
+[node name="Node2D" type="Node2D"]
+
+[node name="Artifact" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_f3y8k")
 animation = &"Artifact"
 speed_scale = 3.0
 offset = Vector2(1, 1)
 script = ExtResource("9_6riqk")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ControlerPosition" type="Node2D" parent="."]
+
+[connection signal="timeout" from="Timer" to="Artifact" method="_on_timer_timeout"]

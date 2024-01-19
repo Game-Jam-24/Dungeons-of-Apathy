@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlv3rxa05i31a"]
+[gd_scene load_steps=6 format=3 uid="uid://yvnko04t0goq"]
 
-[ext_resource type="PackedScene" uid="uid://clio0lmaj01p2" path="res://Scenes/Player.tscn" id="1_itbdc"]
-[ext_resource type="PackedScene" path="res://Scenes/Powerup.tscn" id="2_d04uh"]
+[ext_resource type="PackedScene" uid="uid://csfubbpr2nolc" path="res://Export/Player.tscn" id="1_itbdc"]
+[ext_resource type="PackedScene" uid="uid://ddw6oe5ii7ce3" path="res://Export/Powerup.tscn" id="2_d04uh"]
+[ext_resource type="PackedScene" uid="uid://qnp1arl2bgof" path="res://Scenes/Artifact.tscn" id="2_r6a4g"]
 [ext_resource type="PackedScene" uid="uid://bm2qx6mw42r3c" path="res://Scenes/NOTEPOWERUP.tscn" id="3_bcyi6"]
 [ext_resource type="PackedScene" uid="uid://b0su2wwlfdcgv" path="res://Scenes/Portal.tscn" id="4_pxgll"]
 
@@ -9,6 +10,8 @@
 
 [node name="Character" parent="." instance=ExtResource("1_itbdc")]
 scale = Vector2(1, 1.04141)
+
+[node name="Camera2D2" parent="Character" instance=ExtResource("2_r6a4g")]
 
 [node name="Powerup" parent="." instance=ExtResource("2_d04uh")]
 position = Vector2(151, 96)
