@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 # Implement Sprint Stamina depletion
 # Implement Sprint
+# Implement Health
 
 var speed = Player.speed
 var accel = Player.movementAcceleration
