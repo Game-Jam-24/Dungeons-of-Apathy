@@ -1,18 +1,19 @@
 extends CharacterBody2D
 
 # Implement Sprint Stamina depletion
-# Implement Sprint
 # Implement Health
+# Fix Speed Powerups
 
 var speed = Player.speed
 var accel = Player.movementAcceleration
 var stamina = 100
-var isSprinting: bool
+var isSprinting = Player.isSprinting
 
 var input: Vector2
 
 func _ready():
 	$StaminaRecovery.start(0.17)
+	$SprintExhaustion.start(0.08)
 
 func get_input():
 	input = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -31,7 +32,13 @@ func get_input():
 
 func _physics_process(delta):
 	if !$DashDuration.is_stopped():
-		speed += 500
+		Player.isInDash = true
+		speed = 1000
+	
+	if stamina > 0 and isSprinting:
+		speed += 100
+	else:
+		speed -= 100
 	
 	move_and_slide() #allows the player to move and to be able to slide along colliders (walls)
 
@@ -43,13 +50,19 @@ func _process(delta):
 	
 	speed = Player.speed
 	
-	print_debug(stamina)
+	#print_debug(stamina)
+	#print_debug(velocity)
 
 func _on_stamina_recovery_timeout():
-	if !Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") and stamina < 100 and !Input.get_action_strength("ui_sprint"):
+	if stamina < 100 and !isSprinting and !Player.isInDash:
 		stamina += 1
 
 
 func _on_dash_duration_timeout():
+	Player.isInDash = false
 	speed -= 500
 	accel -= 100
+
+func _on_sprint_exhaustion_timeout():
+	if isSprinting:
+		stamina -= 1

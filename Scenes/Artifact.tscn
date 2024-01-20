@@ -1,53 +1,63 @@
-[gd_scene load_steps=23 format=3 uid="uid://qnp1arl2bgof"]
+[gd_scene load_steps=39 format=3 uid="uid://qnp1arl2bgof"]
 
-[ext_resource type="Texture2D" uid="uid://r8phorpx7tml" path="res://Assets/Animations/Artifact animation/Artifact animation_0001.png" id="1_jq3py"]
-[ext_resource type="Texture2D" uid="uid://mc5h3hsdiqq6" path="res://Assets/Animations/Artifact animation/Artifact animation_0002.png" id="2_8t508"]
-[ext_resource type="Texture2D" uid="uid://c2plr2eljlwvq" path="res://Assets/Animations/Artifact animation/Artifact animation_0003.png" id="3_ge1kh"]
-[ext_resource type="Texture2D" uid="uid://i0hxnr5fl7tq" path="res://Assets/Animations/Artifact animation/Artifact animation_0004.png" id="4_ji788"]
-[ext_resource type="Texture2D" uid="uid://dxyfgoyy87ukx" path="res://Assets/Animations/Artifact animation/Artifact animation_0005.png" id="5_uyygt"]
-[ext_resource type="Texture2D" uid="uid://bhtnwxhlt40ey" path="res://Assets/Animations/Artifact animation/Artifact animation_0006.png" id="6_236no"]
-[ext_resource type="Texture2D" uid="uid://d4fdwsgup6n1m" path="res://Assets/Animations/Artifact animation/Artifact animation_0007.png" id="7_owodb"]
-[ext_resource type="Texture2D" uid="uid://dgt16y0bdxgqr" path="res://Assets/Animations/Artifact animation/Artifact animation_0008.png" id="8_qcw2e"]
-[ext_resource type="Texture2D" uid="uid://cdqttdfikt8gc" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0000.png" id="9_3xp0h"]
+[ext_resource type="Texture2D" uid="uid://r8phorpx7tml" path="res://Assets/Animations/Artifact/Artifact animation/Artifact animation_0001.png" id="1_5cld1"]
+[ext_resource type="Texture2D" uid="uid://mc5h3hsdiqq6" path="res://Assets/Animations/Artifact/Artifact animation/Artifact animation_0002.png" id="2_55ffl"]
+[ext_resource type="Texture2D" uid="uid://c2plr2eljlwvq" path="res://Assets/Animations/Artifact/Artifact animation/Artifact animation_0003.png" id="3_rhjna"]
+[ext_resource type="Texture2D" uid="uid://i0hxnr5fl7tq" path="res://Assets/Animations/Artifact/Artifact animation/Artifact animation_0004.png" id="4_yh20o"]
+[ext_resource type="Texture2D" uid="uid://dxyfgoyy87ukx" path="res://Assets/Animations/Artifact/Artifact animation/Artifact animation_0005.png" id="5_051qr"]
+[ext_resource type="Texture2D" uid="uid://bhtnwxhlt40ey" path="res://Assets/Animations/Artifact/Artifact animation/Artifact animation_0006.png" id="6_1us1c"]
+[ext_resource type="Texture2D" uid="uid://d4fdwsgup6n1m" path="res://Assets/Animations/Artifact/Artifact animation/Artifact animation_0007.png" id="7_v1qe3"]
+[ext_resource type="Texture2D" uid="uid://dgt16y0bdxgqr" path="res://Assets/Animations/Artifact/Artifact animation/Artifact animation_0008.png" id="8_2oxu4"]
 [ext_resource type="Script" path="res://Scripts/Artifact.gd" id="9_6riqk"]
-[ext_resource type="Texture2D" uid="uid://poxglok0xxhs" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0001.png" id="9_jm3qt"]
-[ext_resource type="Texture2D" uid="uid://llfummxesf1c" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0002.png" id="10_vtbcg"]
-[ext_resource type="Texture2D" uid="uid://bxmn7f60aw25p" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0003.png" id="11_h4u2g"]
-[ext_resource type="Texture2D" uid="uid://ufyad6q5tudk" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0004.png" id="12_sxqmh"]
-[ext_resource type="Texture2D" uid="uid://d14dldwoqi4td" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0005.png" id="13_o6s8d"]
-[ext_resource type="Texture2D" uid="uid://b56r42alt3bue" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0006.png" id="14_vc7ol"]
-[ext_resource type="Texture2D" uid="uid://yde1orsrx8q1" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0007.png" id="15_7o3ui"]
-[ext_resource type="Texture2D" uid="uid://bq5byqga8spbp" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0008.png" id="16_rvhnb"]
-[ext_resource type="Texture2D" uid="uid://c178s41lj21om" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0009.png" id="17_38fjg"]
-[ext_resource type="Texture2D" uid="uid://ccxgvkppp43mv" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0010.png" id="18_g4k7l"]
-[ext_resource type="Texture2D" uid="uid://bwn7snc0nrrd" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0011.png" id="19_nhov0"]
+[ext_resource type="Texture2D" uid="uid://cdqttdfikt8gc" path="res://Assets/Animations/Artifact/Artifact morph animation/Timeline 1_0000.png" id="9_cfww3"]
+[ext_resource type="Texture2D" uid="uid://poxglok0xxhs" path="res://Assets/Animations/Artifact/Artifact morph animation/Timeline 1_0001.png" id="10_rtyd8"]
+[ext_resource type="Texture2D" uid="uid://llfummxesf1c" path="res://Assets/Animations/Artifact/Artifact morph animation/Timeline 1_0002.png" id="11_iun0k"]
+[ext_resource type="Texture2D" uid="uid://bxmn7f60aw25p" path="res://Assets/Animations/Artifact/Artifact morph animation/Timeline 1_0003.png" id="12_t43qi"]
+[ext_resource type="Texture2D" uid="uid://ufyad6q5tudk" path="res://Assets/Animations/Artifact/Artifact morph animation/Timeline 1_0004.png" id="13_qqe88"]
+[ext_resource type="Texture2D" uid="uid://d14dldwoqi4td" path="res://Assets/Animations/Artifact/Artifact morph animation/Timeline 1_0005.png" id="14_p2tgd"]
+[ext_resource type="Texture2D" uid="uid://b56r42alt3bue" path="res://Assets/Animations/Artifact/Artifact morph animation/Timeline 1_0006.png" id="15_bfgl6"]
+[ext_resource type="Texture2D" uid="uid://yde1orsrx8q1" path="res://Assets/Animations/Artifact/Artifact morph animation/Timeline 1_0007.png" id="16_422dh"]
+[ext_resource type="Texture2D" uid="uid://bq5byqga8spbp" path="res://Assets/Animations/Artifact/Artifact morph animation/Timeline 1_0008.png" id="17_dkywo"]
+[ext_resource type="Texture2D" uid="uid://c178s41lj21om" path="res://Assets/Animations/Artifact/Artifact morph animation/Timeline 1_0009.png" id="18_p8uhb"]
+[ext_resource type="Texture2D" uid="uid://ccxgvkppp43mv" path="res://Assets/Animations/Artifact/Artifact morph animation/Timeline 1_0010.png" id="19_gq18n"]
+[ext_resource type="Texture2D" uid="uid://bwn7snc0nrrd" path="res://Assets/Animations/Artifact/Artifact morph animation/Timeline 1_0011.png" id="20_frup6"]
+[ext_resource type="Texture2D" uid="uid://bh72tgnns54gf" path="res://Assets/Animations/Artifact/Artifact Weapons/SwordMorph_0002.png" id="21_4w0wr"]
+[ext_resource type="Texture2D" uid="uid://cs235wib44wcd" path="res://Assets/Animations/Artifact/Artifact Weapons/SwordMorph_0003.png" id="22_ujx7p"]
+[ext_resource type="Texture2D" uid="uid://dlh28kh0fkp28" path="res://Assets/Animations/Artifact/Artifact Weapons/SwordMorph_0004.png" id="23_vmbty"]
+[ext_resource type="Texture2D" uid="uid://dmfayack5y3lb" path="res://Assets/Animations/Artifact/Artifact Weapons/SwordMorph_0005.png" id="24_ogete"]
+[ext_resource type="Texture2D" uid="uid://h6ofxd62oh0p" path="res://Assets/Animations/Artifact/Artifact Weapons/SwordMorph_0006.png" id="25_f3ivu"]
+[ext_resource type="Texture2D" uid="uid://dk88vcfwfvl4v" path="res://Assets/Animations/Artifact/Artifact Weapons/SwordMorph_0007.png" id="26_g5wm3"]
+[ext_resource type="Texture2D" uid="uid://b377l8tux4mo" path="res://Assets/Animations/Artifact/Artifact Weapons/SwordMorph_0008.png" id="27_m48mo"]
+[ext_resource type="Texture2D" uid="uid://qkdqp638mkn3" path="res://Assets/Animations/Artifact/Artifact Weapons/SwordMorph_0009.png" id="28_lifhk"]
+[ext_resource type="Texture2D" uid="uid://kbheldh1xd1u" path="res://Assets/Animations/Artifact/Artifact Weapons/SwordMorph_0010.png" id="29_nc62x"]
+[ext_resource type="Texture2D" uid="uid://cib1bjye4exgt" path="res://Assets/Animations/Artifact/Artifact animation/ArtifactAnimation.png" id="31_a6mjs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f3y8k"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_jq3py")
+"texture": ExtResource("1_5cld1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_8t508")
+"texture": ExtResource("2_55ffl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ge1kh")
+"texture": ExtResource("3_rhjna")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_ji788")
+"texture": ExtResource("4_yh20o")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_uyygt")
+"texture": ExtResource("5_051qr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_236no")
+"texture": ExtResource("6_1us1c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_owodb")
+"texture": ExtResource("7_v1qe3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_qcw2e")
+"texture": ExtResource("8_2oxu4")
 }],
 "loop": true,
 "name": &"Artifact",
@@ -55,44 +65,76 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_3xp0h")
+"texture": ExtResource("9_cfww3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_jm3qt")
+"texture": ExtResource("10_rtyd8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_vtbcg")
+"texture": ExtResource("11_iun0k")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_h4u2g")
+"texture": ExtResource("12_t43qi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_sxqmh")
+"texture": ExtResource("13_qqe88")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_o6s8d")
+"texture": ExtResource("14_p2tgd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_vc7ol")
+"texture": ExtResource("15_bfgl6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_7o3ui")
+"texture": ExtResource("16_422dh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_rvhnb")
+"texture": ExtResource("17_dkywo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_38fjg")
+"texture": ExtResource("18_p8uhb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_g4k7l")
+"texture": ExtResource("19_gq18n")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_nhov0")
+"texture": ExtResource("20_frup6")
 }],
 "loop": false,
-"name": &"Morph animation",
+"name": &"ArtifactMorph",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_4w0wr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ujx7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_vmbty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ogete")
+}, {
+"duration": 2.0,
+"texture": ExtResource("25_f3ivu")
+}, {
+"duration": 3.0,
+"texture": ExtResource("26_g5wm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_m48mo")
+}, {
+"duration": 2.0,
+"texture": ExtResource("28_lifhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_nc62x")
+}],
+"loop": false,
+"name": &"SwordMorph",
+"speed": 3.0
 }, {
 "frames": [],
 "loop": true,
@@ -100,18 +142,214 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5x1x"]
+size = Vector2(17, 4)
+
+[sub_resource type="Animation" id="Animation_pfr7f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sword:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("31_a6mjs")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sword:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_xeudw"]
+resource_name = "SwordMorph"
+length = 1.00001
+step = 0.0769231
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sword:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sword:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0769231, 0.153846, 0.230769, 0.307692, 0.384615, 0.461538, 0.538462, 0.615385, 0.692308, 0.769231, 0.846154, 0.923077),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 3, 2, 4, 6, 6, 5, 5, 5, 7, 8, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_5wswf"]
+resource_name = "ArtifactIdle"
+length = 1.33335
+loop_mode = 1
+step = 0.166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("31_a6mjs")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sword:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sword:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333, 1, 1.16667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 7, 2, 5, 3, 4, 6]
+}
+
+[sub_resource type="Animation" id="Animation_box7w"]
+resource_name = "ArtifactMorph"
+length = 11.0001
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sword:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sword:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0909091, 0.181818, 0.272727, 0.363636, 0.454545, 0.545455, 0.636364, 0.727273, 0.818182, 0.909091, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [9, 10, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i2yfl"]
+_data = {
+"ArtifactIdle": SubResource("Animation_5wswf"),
+"ArtifactMorph": SubResource("Animation_box7w"),
+"RESET": SubResource("Animation_pfr7f"),
+"SwordMorph": SubResource("Animation_xeudw")
+}
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Artifact" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_f3y8k")
-animation = &"Artifact"
+animation = &"SwordMorph"
+frame = 1
 speed_scale = 3.0
 offset = Vector2(1, 1)
 script = ExtResource("9_6riqk")
+
+[node name="SwordCollider" type="Area2D" parent="Artifact"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Artifact/SwordCollider"]
+position = Vector2(7.5, 1)
+shape = SubResource("RectangleShape2D_u5x1x")
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="ControlerPosition" type="Node2D" parent="."]
 
+[node name="Sword" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("31_a6mjs")
+hframes = 8
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_i2yfl")
+}
+
+[connection signal="animation_finished" from="Artifact" to="Artifact" method="_on_animation_finished"]
 [connection signal="timeout" from="Timer" to="Artifact" method="_on_timer_timeout"]
