@@ -27,10 +27,10 @@
 [ext_resource type="Texture2D" uid="uid://dmfayack5y3lb" path="res://Assets/Animations/Artifact/Artifact Weapons/SwordMorph_0005.png" id="24_ogete"]
 [ext_resource type="Texture2D" uid="uid://h6ofxd62oh0p" path="res://Assets/Animations/Artifact/Artifact Weapons/SwordMorph_0006.png" id="25_f3ivu"]
 [ext_resource type="Texture2D" uid="uid://dk88vcfwfvl4v" path="res://Assets/Animations/Artifact/Artifact Weapons/SwordMorph_0007.png" id="26_g5wm3"]
+[ext_resource type="Texture2D" uid="uid://d4fphc0cmlu2l" path="res://Assets/Animations/Artifact/Artifact Weapons/SwordMorph_0012.png" id="27_jai47"]
 [ext_resource type="Texture2D" uid="uid://b377l8tux4mo" path="res://Assets/Animations/Artifact/Artifact Weapons/SwordMorph_0008.png" id="27_m48mo"]
 [ext_resource type="Texture2D" uid="uid://qkdqp638mkn3" path="res://Assets/Animations/Artifact/Artifact Weapons/SwordMorph_0009.png" id="28_lifhk"]
 [ext_resource type="Texture2D" uid="uid://kbheldh1xd1u" path="res://Assets/Animations/Artifact/Artifact Weapons/SwordMorph_0010.png" id="29_nc62x"]
-[ext_resource type="Texture2D" uid="uid://cib1bjye4exgt" path="res://Assets/Animations/Artifact/Artifact animation/ArtifactAnimation.png" id="31_a6mjs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f3y8k"]
 animations = [{
@@ -102,7 +102,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"ArtifactMorph",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -124,9 +124,12 @@ animations = [{
 "texture": ExtResource("26_g5wm3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_m48mo")
+"texture": ExtResource("27_jai47")
 }, {
 "duration": 2.0,
+"texture": ExtResource("27_m48mo")
+}, {
+"duration": 1.0,
 "texture": ExtResource("28_lifhk")
 }, {
 "duration": 1.0,
@@ -134,7 +137,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"SwordMorph",
-"speed": 3.0
+"speed": 4.0
 }, {
 "frames": [],
 "loop": true,
@@ -145,211 +148,139 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u5x1x"]
 size = Vector2(17, 4)
 
+[sub_resource type="Animation" id="Animation_qgkaa"]
+resource_name = "ColorShift"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Artifact:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.114, 0.8),
+"transitions": PackedFloat32Array(2.46229, 1.51572),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.921569, 0.662745, 0.345098, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_pfr7f"]
 length = 0.001
+
+[sub_resource type="Animation" id="Animation_bblab"]
+resource_name = "SwordSlash"
+length = 0.6
+step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sword:frame")
+tracks/0/enabled = false
+tracks/0/path = NodePath("Artifact:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 0.1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 0), Vector2(6, -12), Vector2(6, 12), Vector2(1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sword:texture")
+tracks/1/enabled = false
+tracks/1/path = NodePath("Artifact:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("31_a6mjs")]
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 0.1, 1, 1),
+"update": 0,
+"values": [0.0, -0.785398, 0.785398, 0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sword:hframes")
+tracks/2/path = NodePath("Artifact:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 0.1, 1, 1),
+"update": 0,
+"values": [Vector2(32, 0), Vector2(35, -10), Vector2(35, 10), Vector2(32, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_xeudw"]
-resource_name = "SwordMorph"
-length = 1.00001
-step = 0.0769231
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sword:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sword:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [11]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sword:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0769231, 0.153846, 0.230769, 0.307692, 0.384615, 0.461538, 0.538462, 0.615385, 0.692308, 0.769231, 0.846154, 0.923077),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [1, 3, 2, 4, 6, 6, 5, 5, 5, 7, 8, 8, 9]
-}
-
-[sub_resource type="Animation" id="Animation_5wswf"]
-resource_name = "ArtifactIdle"
-length = 1.33335
-loop_mode = 1
-step = 0.166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sword:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("31_a6mjs")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sword:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sword:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333, 1, 1.16667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 7, 2, 5, 3, 4, 6]
-}
-
-[sub_resource type="Animation" id="Animation_box7w"]
-resource_name = "ArtifactMorph"
-length = 11.0001
+[sub_resource type="Animation" id="Animation_262we"]
+resource_name = "SwordStab"
+length = 0.4
 step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sword:texture")
+tracks/0/enabled = false
+tracks/0/path = NodePath("Artifact:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.4),
+"transitions": PackedFloat32Array(1, 3, 5, 1),
+"update": 0,
+"values": [Vector2(1, 0), Vector2(-5, 0), Vector2(15, 0), Vector2(1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sword:hframes")
+tracks/1/path = NodePath("Artifact:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [12]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sword:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0909091, 0.181818, 0.272727, 0.363636, 0.454545, 0.545455, 0.636364, 0.727273, 0.818182, 0.909091, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [9, 10, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
+"transitions": PackedFloat32Array(1, 1, 0.1, 1),
+"update": 0,
+"values": [Vector2(32, 0), Vector2(28, 0), Vector2(38, 0), Vector2(32, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i2yfl"]
 _data = {
-"ArtifactIdle": SubResource("Animation_5wswf"),
-"ArtifactMorph": SubResource("Animation_box7w"),
+"ColorShift": SubResource("Animation_qgkaa"),
 "RESET": SubResource("Animation_pfr7f"),
-"SwordMorph": SubResource("Animation_xeudw")
+"SwordSlash": SubResource("Animation_bblab"),
+"SwordStab": SubResource("Animation_262we")
 }
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Artifact" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_f3y8k")
 animation = &"SwordMorph"
-frame = 1
+frame = 9
+frame_progress = 1.0
 speed_scale = 3.0
-offset = Vector2(1, 1)
+offset = Vector2(32, 0)
 script = ExtResource("9_6riqk")
 
-[node name="SwordCollider" type="Area2D" parent="Artifact"]
+[node name="SwordStab" type="Area2D" parent="Artifact"]
 visible = false
+position = Vector2(-1, -1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Artifact/SwordCollider"]
-position = Vector2(7.5, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Artifact/SwordStab"]
+position = Vector2(46, 1)
 shape = SubResource("RectangleShape2D_u5x1x")
 
-[node name="Timer" type="Timer" parent="."]
-
-[node name="ControlerPosition" type="Node2D" parent="."]
-
-[node name="Sword" type="Sprite2D" parent="."]
-visible = false
-texture_filter = 1
-texture = ExtResource("31_a6mjs")
-hframes = 8
-frame = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Artifact"]
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_i2yfl")
 }
+
+[node name="SwordSlash" type="Area2D" parent="Artifact"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Artifact/SwordSlash"]
+position = Vector2(42, 0)
+polygon = PackedVector2Array(-9, -8, 8, -14, 8, 14, -9, 8)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ControlerPosition" type="Node2D" parent="."]
 
 [connection signal="animation_finished" from="Artifact" to="Artifact" method="_on_animation_finished"]
 [connection signal="timeout" from="Timer" to="Artifact" method="_on_timer_timeout"]

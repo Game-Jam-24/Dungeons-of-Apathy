@@ -8,7 +8,7 @@ var speed = Player.speed
 var accel = Player.movementAcceleration
 var stamina = 100
 var isSprinting = Player.isSprinting
-
+var health = Player.health
 var input: Vector2
 
 func _ready():
@@ -28,6 +28,9 @@ func get_input():
 	else:
 		isSprinting = false
 	
+	if Input.is_action_just_pressed("debug") and health > 0:
+		health -= 10
+	
 	return input.normalized() #makes it so that when you go diagonally the speed doesn't stack
 
 func _physics_process(delta):
@@ -43,6 +46,8 @@ func _physics_process(delta):
 	move_and_slide() #allows the player to move and to be able to slide along colliders (walls)
 
 func _process(delta):
+	if health <= 0:
+		get_tree().change_scene_to_file("res://Scenes/TestScene.tscn")
 	
 	input = get_input()
 	
@@ -52,6 +57,7 @@ func _process(delta):
 	
 	#print_debug(stamina)
 	#print_debug(velocity)
+	#print_debug(health)
 
 func _on_stamina_recovery_timeout():
 	if stamina < 100 and !isSprinting and !Player.isInDash:
