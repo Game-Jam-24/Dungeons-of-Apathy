@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://clio0lmaj01p2"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_s5sor"]
-[ext_resource type="Texture2D" uid="uid://drhb2j3soccyt" path="res://Assets/Sprites/Player placeholder.jpg" id="2_5022i"]
+[ext_resource type="Texture2D" uid="uid://drhb2j3soccyt" path="res://Assets/Sprites/Placeholders/Player placeholder.jpg" id="2_3hltg"]
 [ext_resource type="PackedScene" uid="uid://qnp1arl2bgof" path="res://Scenes/Artifact.tscn" id="3_ti04h"]
 [ext_resource type="PackedScene" uid="uid://dpf2vaa3apwl2" path="res://MouseCursor.tscn" id="4_jd3te"]
 
@@ -14,7 +14,7 @@ collision_mask = 3
 script = ExtResource("1_s5sor")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_5022i")
+texture = ExtResource("2_3hltg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_n53s4")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhlxxeioblpvu"
-path="res://.godot/imported/Note Placeholder.png-4cffe4bd5fe592eb4eed1f0acc998fe4.ctex"
+uid="uid://ggqq2bo2n6ms"
+path="res://.godot/imported/Powerup placeholder.png-2097a3eb05d1e1c4aae9adffe93949cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Note Placeholder.png"
-dest_files=["res://.godot/imported/Note Placeholder.png-4cffe4bd5fe592eb4eed1f0acc998fe4.ctex"]
+source_file="res://Assets/Sprites/Placeholders/Powerup placeholder.png"
+dest_files=["res://.godot/imported/Powerup placeholder.png-2097a3eb05d1e1c4aae9adffe93949cf.ctex"]
 
 [params]
 

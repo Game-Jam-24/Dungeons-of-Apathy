@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwmg2skjhs178"
-path="res://.godot/imported/Timeline 1_0000.png-9832246e01f6a429b340c7494ca4a6a5.ctex"
+uid="uid://bmlrh5e2qow6m"
+path="res://.godot/imported/ApathyDamageCellPlaceholder.jpg-6fb3f14298afbf7ffdea9959ce914309.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Timeline 1_0000.png"
-dest_files=["res://.godot/imported/Timeline 1_0000.png-9832246e01f6a429b340c7494ca4a6a5.ctex"]
+source_file="res://Assets/Tileset/ApathyDamageCellPlaceholder.jpg"
+dest_files=["res://.godot/imported/ApathyDamageCellPlaceholder.jpg-6fb3f14298afbf7ffdea9959ce914309.ctex"]
 
 [params]
 

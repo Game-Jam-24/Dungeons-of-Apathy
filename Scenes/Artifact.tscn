@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://qnp1arl2bgof"]
+[gd_scene load_steps=47 format=3 uid="uid://qnp1arl2bgof"]
 
 [ext_resource type="Texture2D" uid="uid://r8phorpx7tml" path="res://Assets/Animations/Artifact/Artifact animation/Artifact animation_0001.png" id="1_5cld1"]
 [ext_resource type="Texture2D" uid="uid://mc5h3hsdiqq6" path="res://Assets/Animations/Artifact/Artifact animation/Artifact animation_0002.png" id="2_55ffl"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://b377l8tux4mo" path="res://Assets/Animations/Artifact/Artifact Weapons/SwordMorph_0008.png" id="27_m48mo"]
 [ext_resource type="Texture2D" uid="uid://qkdqp638mkn3" path="res://Assets/Animations/Artifact/Artifact Weapons/SwordMorph_0009.png" id="28_lifhk"]
 [ext_resource type="Texture2D" uid="uid://kbheldh1xd1u" path="res://Assets/Animations/Artifact/Artifact Weapons/SwordMorph_0010.png" id="29_nc62x"]
+[ext_resource type="Texture2D" uid="uid://003doi6n0vuh" path="res://Assets/Sprites/ParticleTextures/FireParticlesTexture2.png" id="32_qij7x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f3y8k"]
 animations = [{
@@ -244,6 +245,40 @@ _data = {
 "SwordStab": SubResource("Animation_262we")
 }
 
+[sub_resource type="Curve" id="Curve_mmj8t"]
+_data = [Vector2(0, 0.824176), 0.0, 0.0, 0, 0, Vector2(1, 0.043956), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_8buie"]
+curve = SubResource("Curve_mmj8t")
+
+[sub_resource type="Gradient" id="Gradient_tjx2s"]
+offsets = PackedFloat32Array(0, 0.516393)
+colors = PackedColorArray(0.966167, 0.856453, 0.103398, 1, 1, 0.0117647, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bbd53"]
+gradient = SubResource("Gradient_tjx2s")
+
+[sub_resource type="Curve" id="Curve_ccb53"]
+_data = [Vector2(0, 0.681319), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_craju"]
+curve = SubResource("Curve_ccb53")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vk4vt"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(6, 30, 1)
+inherit_velocity_ratio = 0.3
+gravity = Vector3(0, -98, 0)
+scale_min = 0.07
+scale_max = 0.1
+scale_curve = SubResource("CurveTexture_craju")
+color_ramp = SubResource("GradientTexture1D_bbd53")
+alpha_curve = SubResource("CurveTexture_8buie")
+turbulence_enabled = true
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Artifact" type="AnimatedSprite2D" parent="."]
@@ -276,6 +311,14 @@ visible = false
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Artifact/SwordSlash"]
 position = Vector2(42, 0)
 polygon = PackedVector2Array(-9, -8, 8, -14, 8, 14, -9, 8)
+
+[node name="Fire" type="GPUParticles2D" parent="Artifact"]
+visible = false
+position = Vector2(39, 0)
+scale = Vector2(1.3741, 0.000288404)
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_vk4vt")
+texture = ExtResource("32_qij7x")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

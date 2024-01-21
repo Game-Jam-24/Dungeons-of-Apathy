@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ggqq2bo2n6ms"
-path="res://.godot/imported/Powerup placeholder.png-7a4ed6c86915755c1c1330b0b880fd4e.ctex"
+uid="uid://003doi6n0vuh"
+path="res://.godot/imported/FireParticlesTexture2.png-02cd9bd3a3f82b626288b3c31aa3da43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Powerup placeholder.png"
-dest_files=["res://.godot/imported/Powerup placeholder.png-7a4ed6c86915755c1c1330b0b880fd4e.ctex"]
+source_file="res://Assets/Sprites/ParticleTextures/FireParticlesTexture2.png"
+dest_files=["res://.godot/imported/FireParticlesTexture2.png-02cd9bd3a3f82b626288b3c31aa3da43.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8yqs0acluyko"
-path="res://.godot/imported/PortalPlaceholder.jpg-13715edeea37836cce8880e12e78dbe6.ctex"
+uid="uid://y6uplyn3dmao"
+path="res://.godot/imported/ArtifactSword.png-451a500b6a1207b64ea1f13de79bd7f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/PortalPlaceholder.jpg"
-dest_files=["res://.godot/imported/PortalPlaceholder.jpg-13715edeea37836cce8880e12e78dbe6.ctex"]
+source_file="res://Assets/Sprites/Artifact Weapons/ArtifactSword.png"
+dest_files=["res://.godot/imported/ArtifactSword.png-451a500b6a1207b64ea1f13de79bd7f0.ctex"]
 
 [params]
 
