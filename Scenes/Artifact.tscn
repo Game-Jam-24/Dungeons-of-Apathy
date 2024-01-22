@@ -103,7 +103,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"ArtifactMorph",
-"speed": 7.0
+"speed": 11.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -145,9 +145,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5x1x"]
-size = Vector2(17, 4)
 
 [sub_resource type="Animation" id="Animation_qgkaa"]
 resource_name = "ColorShift"
@@ -269,7 +266,7 @@ curve = SubResource("Curve_ccb53")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vk4vt"]
 particle_flag_disable_z = true
 emission_shape = 3
-emission_box_extents = Vector3(6, 30, 1)
+emission_box_extents = Vector3(1, 1, 1)
 inherit_velocity_ratio = 0.3
 gravity = Vector3(0, -98, 0)
 scale_min = 0.07
@@ -279,25 +276,18 @@ color_ramp = SubResource("GradientTexture1D_bbd53")
 alpha_curve = SubResource("CurveTexture_8buie")
 turbulence_enabled = true
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykdne"]
+size = Vector2(18, 4)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Artifact" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_f3y8k")
-animation = &"SwordMorph"
-frame = 9
-frame_progress = 1.0
+animation = &"Artifact"
 speed_scale = 3.0
 offset = Vector2(32, 0)
 script = ExtResource("9_6riqk")
-
-[node name="SwordStab" type="Area2D" parent="Artifact"]
-visible = false
-position = Vector2(-1, -1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Artifact/SwordStab"]
-position = Vector2(46, 1)
-shape = SubResource("RectangleShape2D_u5x1x")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Artifact"]
 root_node = NodePath("../..")
@@ -305,17 +295,23 @@ libraries = {
 "": SubResource("AnimationLibrary_i2yfl")
 }
 
-[node name="SwordSlash" type="Area2D" parent="Artifact"]
-visible = false
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Artifact/SwordSlash"]
-position = Vector2(42, 0)
-polygon = PackedVector2Array(-9, -8, 8, -14, 8, 14, -9, 8)
-
 [node name="Fire" type="GPUParticles2D" parent="Artifact"]
 visible = false
 position = Vector2(39, 0)
-scale = Vector2(1.3741, 0.000288404)
+scale = Vector2(7.8, 1e-05)
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_vk4vt")
+texture = ExtResource("32_qij7x")
+
+[node name="Area2D" type="Area2D" parent="Artifact"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Artifact/Area2D"]
+position = Vector2(39, 0)
+shape = SubResource("RectangleShape2D_ykdne")
+
+[node name="Fire2" type="GPUParticles2D" parent="Artifact"]
+position = Vector2(32, 0)
+scale = Vector2(8, 8)
 amount = 30
 process_material = SubResource("ParticleProcessMaterial_vk4vt")
 texture = ExtResource("32_qij7x")
@@ -326,4 +322,5 @@ one_shot = true
 [node name="ControlerPosition" type="Node2D" parent="."]
 
 [connection signal="animation_finished" from="Artifact" to="Artifact" method="_on_animation_finished"]
+[connection signal="body_shape_entered" from="Artifact/Area2D" to="Artifact" method="_on_area_2d_body_shape_entered"]
 [connection signal="timeout" from="Timer" to="Artifact" method="_on_timer_timeout"]

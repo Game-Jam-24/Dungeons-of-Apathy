@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://csgf5ed6bwq1o"]
+[gd_scene load_steps=4 format=3 uid="uid://csgf5ed6bwq1o"]
 
 [ext_resource type="TileSet" uid="uid://bh7t45wq7238n" path="res://Assets/Sprites/Apathy Spread/ApathyTile2Set.tres" id="1_uar0j"]
 [ext_resource type="Script" path="res://Scripts/Apathy.gd" id="2_78bxw"]
+[ext_resource type="PackedScene" uid="uid://clio0lmaj01p2" path="res://Scenes/Player.tscn" id="3_j1dbc"]
 
 [node name="TileMap" type="TileMap"]
 texture_filter = 1
@@ -14,7 +15,10 @@ script = ExtResource("2_78bxw")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2(132, 76)
 zoom = Vector2(3, 3)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_j1dbc")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
