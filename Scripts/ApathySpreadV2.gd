@@ -26,7 +26,7 @@ var cellsHit = Vector2i(0,0)
 
 
 func _ready():
-	if get_parent():
+	if get_parent() is TileMap:
 		dungeon = $".."
 	else:
 		dungeon = TileMap.new()
