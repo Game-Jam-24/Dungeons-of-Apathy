@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Pirate Game Jam"
+run/main_scene="res://Scenes/hub.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,6 +20,8 @@ config/icon="res://icon.svg"
 Level="*res://Scripts/Singletons/level.gd"
 Global="*res://Scripts/Singletons/global.gd"
 Player="*res://Scripts/Singletons/player.gd"
+Hub="*res://Scripts/Singletons/hub.gd"
+SceneManager="*res://Scripts/Singletons/scenemanager.gd"
 
 [display]
 
