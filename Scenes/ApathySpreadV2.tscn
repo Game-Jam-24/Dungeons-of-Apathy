@@ -1,19 +1,42 @@
 [gd_scene load_steps=6 format=3 uid="uid://bafigw3j0b5vf"]
 
-[ext_resource type="Texture2D" uid="uid://bmlrh5e2qow6m" path="res://Assets/Tileset/ApathyDamageCellPlaceholder.jpg" id="1_on0cb"]
+[ext_resource type="Texture2D" uid="uid://cri5b3l8pt3f4" path="res://Assets/Tileset/ApathyTestSheet.png" id="1_x5t5x"]
 [ext_resource type="Script" path="res://Scripts/ApathySpreadV2.gd" id="2_jcdem"]
 [ext_resource type="PackedScene" uid="uid://clio0lmaj01p2" path="res://Scenes/Player.tscn" id="3_8l5dx"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bh22y"]
-texture = ExtResource("1_on0cb")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c4g7m"]
+texture = ExtResource("1_x5t5x")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_1/angular_velocity = 0.0
+0:0/0/custom_data_0 = 1
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_1/angular_velocity = 0.0
+1:0/0/custom_data_0 = 2
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_1/angular_velocity = 0.0
+2:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0/custom_data_0 = 3
 
 [sub_resource type="TileSet" id="TileSet_xtb7k"]
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_bh22y")
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 0
+physics_layer_1/collision_layer = 1
+physics_layer_1/collision_mask = 0
+custom_data_layer_0/name = "ApathyType"
+custom_data_layer_0/type = 2
+sources/2 = SubResource("TileSetAtlasSource_c4g7m")
 
 [node name="Node2D" type="Node2D"]
 
@@ -23,7 +46,7 @@ tile_set = SubResource("TileSet_xtb7k")
 rendering_quadrant_size = 4
 format = 2
 layer_0/name = "Spread"
-layer_0/tile_data = PackedInt32Array(327683, 0, 0, 262147, 0, 0, 262148, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 393215, 0, 0, 458751, 0, 0, 458750, 0, 0, 458749, 0, 0, 393213, 0, 0, 393212, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 393214, 0, 0, 262142, 0, 0, 262141, 0, 0, 262140, 0, 0, 262139, 0, 0, 262138, 0, 0)
+layer_0/tile_data = PackedInt32Array(262141, 2, 0, 262143, 65538, 0, 196609, 131074, 0)
 script = ExtResource("2_jcdem")
 
 [node name="Timer" type="Timer" parent="TileMap"]
