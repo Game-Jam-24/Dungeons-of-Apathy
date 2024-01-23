@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_s5sor"]
 [ext_resource type="Texture2D" uid="uid://drhb2j3soccyt" path="res://Assets/Sprites/Placeholders/Player placeholder.jpg" id="2_3hltg"]
 [ext_resource type="PackedScene" uid="uid://qnp1arl2bgof" path="res://Scenes/Artifact.tscn" id="3_ti04h"]
-[ext_resource type="PackedScene" uid="uid://dpf2vaa3apwl2" path="res://MouseCursor.tscn" id="4_jd3te"]
+[ext_resource type="PackedScene" uid="uid://byntgwjgvfdmc" path="res://MouseCursor.tscn" id="4_jd3te"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n53s4"]
 size = Vector2(32, 32)
@@ -20,7 +20,7 @@ texture = ExtResource("2_3hltg")
 shape = SubResource("RectangleShape2D_n53s4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
 [node name="Artifact" parent="." instance=ExtResource("3_ti04h")]

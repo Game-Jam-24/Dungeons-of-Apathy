@@ -21,16 +21,16 @@ var spawnerNum = 0
 
 func _ready():
 	$Timer.start(spreadTime)
-	generate_apathy_seeds()
+	#generate_apathy_seeds()
 
-func generate_apathy_seeds():
-	for spawnerNum in spawnerNumProbability[randf_range(0,spawnerNumProbability.size())]:
-		tilemap.set_cell(0, apathySeedSpawn, 1, atlasCoordsArray)
-		apathySeedSpawn = Vector2i(randf_range(0,40), randf_range(0,22))
-		x = apathySeedSpawn.x
-		y = apathySeedSpawn.y
-		apathySeedCoords.append(Vector2(x, y))
-		apathyCellCoords.append(Vector2i(x, y))
+#func generate_apathy_seeds():
+	#for spawnerNum in spawnerNumProbability[randf_range(0,spawnerNumProbability.size())]:
+		#tilemap.set_cell(0, apathySeedSpawn, 1, atlasCoordsArray)
+		#apathySeedSpawn = Vector2i(randf_range(0,40), randf_range(0,22))
+		#x = apathySeedSpawn.x
+		#y = apathySeedSpawn.y
+		#apathySeedCoords.append(Vector2(x, y))
+		#apathyCellCoords.append(Vector2i(x, y))
 
 func cell_spreader():
 	for usedCells in tilemap.get_used_cells(0):

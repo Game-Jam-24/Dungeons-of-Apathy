@@ -44,12 +44,14 @@ func get_input():
 func _physics_process(delta):
 	if !$DashDuration.is_stopped():
 		Player.isInDash = true
-		speed += 700
+		speed += 500
 	
 	if stamina > 0 and isSprinting:
-		speed += 100
+		speed += 70
+	elif stamina < 0:
+		stamina = 0
 	else:
-		speed -= 100
+		speed -= 70
 	
 	move_and_slide() #allows the player to move and to be able to slide along colliders (walls)
 
@@ -75,9 +77,9 @@ func _on_stamina_recovery_timeout():
 
 func _on_dash_duration_timeout():
 	Player.isInDash = false
-	speed -= 700
+	speed -= 500
 	#accel -= 100
 
 func _on_sprint_exhaustion_timeout():
 	if isSprinting:
-		stamina -= 1
+		stamina -= 2
