@@ -7,8 +7,9 @@ const dungeon_tile_size: Vector2i = Vector2i(32,32)
 const apathy_tile_size: Vector2i = Vector2i(16,16)
 const dungeon_floor_atlas_coord: Vector2i = Vector2i(7,5)
 
-
 @export var spreadTime = 0.2
+
+
 const mapSize = Vector2(40, 22)
 var atlasCoordsArray = Vector2i(randf_range(0, 3), randf_range(0,3))
 var spawnerNumProbability = [1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,4,4,5]
@@ -26,14 +27,14 @@ var cellsHit = Vector2i(0,0)
 
 
 func _ready():
-	if get_parent():
+	if get_parent() == TileMap:
 		dungeon = $".."
 	else:
 		dungeon = TileMap.new()
 		dungeon.set_rendering_quadrant_size(dungeon_tile_size.x)
+	__seed_dungeon()
 	$Timer.start(spreadTime)
 	cellType = Vector2i(0,0)
-	#generate_apathy_seeds()
 	
 
 #func generate_apathy_seeds():
@@ -90,3 +91,13 @@ func __get_dungeon_tile_position(apathy_tile_position: Vector2i) -> Vector2i:
 		int(apathy_tile_position.y / 2)
 	)
 	return dungeon_tile_position
+
+## Function to seed dungeon (parent tilemap) with Apathy.
+func __seed_dungeon() -> void:
+	for spawnerNum in spawnerNumProbability[randf_range(0,spawnerNumProbability.size())]:
+		tilemap.set_cell(0, apathySeedSpawn, 1, atlasCoordsArray)
+		apathySeedSpawn = Vector2i(randf_range(0,40), randf_range(0,22))
+		x = apathySeedSpawn.x
+		y = apathySeedSpawn.y
+		apathySeedCoords.append(Vector2(x, y))
+		apathyCellCoords.append(Vector2i(x, y))
