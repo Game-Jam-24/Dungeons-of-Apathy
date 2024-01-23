@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkk7wai7yoxi3"]
+[gd_scene load_steps=3 format=3 uid="uid://bkk7wai7yoxi3"]
 
 [ext_resource type="Script" path="res://Scripts/room.gd" id="2_dv4kt"]
+[ext_resource type="PackedScene" uid="uid://dj8kyu8bpd5f8" path="res://Scenes/Player.tscn" id="2_fk5jo"]
 
 [node name="Room" type="Node2D"]
 script = ExtResource("2_dv4kt")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_fk5jo")]
+z_index = 2
+position = Vector2(144, 80)
