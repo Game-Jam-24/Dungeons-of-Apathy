@@ -1,6 +1,6 @@
 extends Node2D
 
-var cursorImage = load("res://Assets/Sprites/DebugTestStick/DebugTestStick1.png")
+var cursorImage = load("res://Assets/Sprites/Cursor.png")
 
 func _ready():
 	Input.set_custom_mouse_cursor(cursorImage)
