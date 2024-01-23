@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://becgo5olc41qs"]
 
-[ext_resource type="Texture2D" uid="uid://cp8hpqaushql7" path="res://Assets/Tileset/apatthy.png" id="1_5wovb"]
+[ext_resource type="Texture2D" uid="uid://btavvqsse4m1y" path="res://Assets/Tileset/apatthy.png" id="1_5wovb"]
 [ext_resource type="Texture2D" uid="uid://cri5b3l8pt3f4" path="res://Assets/Tileset/ApathyTestSheet.png" id="1_x5t5x"]
 [ext_resource type="Script" path="res://Scripts/ApathySpreadV2.gd" id="2_jcdem"]
 [ext_resource type="PackedScene" uid="uid://clio0lmaj01p2" path="res://Scenes/Player.tscn" id="3_8l5dx"]

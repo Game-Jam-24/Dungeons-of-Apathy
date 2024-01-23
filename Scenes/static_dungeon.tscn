@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cheithxucjhee"]
+[gd_scene load_steps=5 format=3 uid="uid://bg1hp0qwjru3t"]
 
-[ext_resource type="PackedScene" uid="uid://dj8kyu8bpd5f8" path="res://Scenes/Player.tscn" id="1_v4q00"]
-[ext_resource type="TileSet" uid="uid://816t3w2cp6lk" path="res://Assets/Tileset/lvl1tileset.tres" id="2_r78nv"]
-[ext_resource type="PackedScene" uid="uid://nuk52e74875y" path="res://Scenes/Powerup.tscn" id="3_gp6ci"]
-[ext_resource type="PackedScene" uid="uid://dfeaqclcgyts1" path="res://Scenes/Apathy.tscn" id="3_gt1ra"]
+[ext_resource type="PackedScene" uid="uid://clio0lmaj01p2" path="res://Scenes/Player.tscn" id="1_v4q00"]
+[ext_resource type="TileSet" uid="uid://bse1l4sygsqau" path="res://Assets/Tileset/lvl1tileset.tres" id="2_r78nv"]
+[ext_resource type="PackedScene" uid="uid://cdkubo21s3djc" path="res://Scenes/Powerup.tscn" id="3_gp6ci"]
+[ext_resource type="PackedScene" path="res://Scenes/Apathy.tscn" id="3_gt1ra"]
 
 [node name="StaticDungeon" type="Node2D"]
 
