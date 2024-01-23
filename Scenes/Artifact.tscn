@@ -1,0 +1,105 @@
+[gd_scene load_steps=22 format=3 uid="uid://chdilqssv5cpm"]
+
+[ext_resource type="Texture2D" uid="uid://r8phorpx7tml" path="res://Assets/Animations/Artifact animation/Artifact animation_0001.png" id="1_jq3py"]
+[ext_resource type="Texture2D" uid="uid://mc5h3hsdiqq6" path="res://Assets/Animations/Artifact animation/Artifact animation_0002.png" id="2_8t508"]
+[ext_resource type="Texture2D" uid="uid://c2plr2eljlwvq" path="res://Assets/Animations/Artifact animation/Artifact animation_0003.png" id="3_ge1kh"]
+[ext_resource type="Texture2D" uid="uid://i0hxnr5fl7tq" path="res://Assets/Animations/Artifact animation/Artifact animation_0004.png" id="4_ji788"]
+[ext_resource type="Texture2D" uid="uid://dxyfgoyy87ukx" path="res://Assets/Animations/Artifact animation/Artifact animation_0005.png" id="5_uyygt"]
+[ext_resource type="Texture2D" uid="uid://bhtnwxhlt40ey" path="res://Assets/Animations/Artifact animation/Artifact animation_0006.png" id="6_236no"]
+[ext_resource type="Texture2D" uid="uid://d4fdwsgup6n1m" path="res://Assets/Animations/Artifact animation/Artifact animation_0007.png" id="7_owodb"]
+[ext_resource type="Texture2D" uid="uid://dgt16y0bdxgqr" path="res://Assets/Animations/Artifact animation/Artifact animation_0008.png" id="8_qcw2e"]
+[ext_resource type="Script" path="res://Scripts/Artifact.gd" id="9_6riqk"]
+[ext_resource type="Texture2D" uid="uid://poxglok0xxhs" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0001.png" id="9_jm3qt"]
+[ext_resource type="Texture2D" uid="uid://llfummxesf1c" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0002.png" id="10_vtbcg"]
+[ext_resource type="Texture2D" uid="uid://bxmn7f60aw25p" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0003.png" id="11_h4u2g"]
+[ext_resource type="Texture2D" uid="uid://ufyad6q5tudk" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0004.png" id="12_sxqmh"]
+[ext_resource type="Texture2D" uid="uid://d14dldwoqi4td" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0005.png" id="13_o6s8d"]
+[ext_resource type="Texture2D" uid="uid://b56r42alt3bue" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0006.png" id="14_vc7ol"]
+[ext_resource type="Texture2D" uid="uid://yde1orsrx8q1" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0007.png" id="15_7o3ui"]
+[ext_resource type="Texture2D" uid="uid://bq5byqga8spbp" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0008.png" id="16_rvhnb"]
+[ext_resource type="Texture2D" uid="uid://c178s41lj21om" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0009.png" id="17_38fjg"]
+[ext_resource type="Texture2D" uid="uid://ccxgvkppp43mv" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0010.png" id="18_g4k7l"]
+[ext_resource type="Texture2D" uid="uid://bwn7snc0nrrd" path="res://Assets/Animations/Artifact morph animation/Timeline 1_0011.png" id="19_nhov0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f3y8k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jq3py")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8t508")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ge1kh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ji788")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uyygt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_236no")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_owodb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qcw2e")
+}],
+"loop": true,
+"name": &"Artifact",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_jm3qt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vtbcg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_h4u2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_sxqmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_o6s8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vc7ol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7o3ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_rvhnb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_38fjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_g4k7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nhov0")
+}],
+"loop": false,
+"name": &"Morph animation",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Artifact" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_f3y8k")
+animation = &"Artifact"
+speed_scale = 3.0
+offset = Vector2(1, 1)
+script = ExtResource("9_6riqk")
