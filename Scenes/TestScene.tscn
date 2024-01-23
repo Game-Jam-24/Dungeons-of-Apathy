@@ -1,23 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://cchvhbk2qbj2d"]
+[gd_scene load_steps=6 format=3 uid="uid://dlv3rxa05i31a"]
 
-[ext_resource type="PackedScene" uid="uid://dj8kyu8bpd5f8" path="res://Scenes/Player.tscn" id="1_itbdc"]
-[ext_resource type="PackedScene" uid="uid://nuk52e74875y" path="res://Scenes/Powerup.tscn" id="2_d04uh"]
-[ext_resource type="PackedScene" uid="uid://chdilqssv5cpm" path="res://Scenes/Artifact.tscn" id="2_r6a4g"]
+[ext_resource type="PackedScene" uid="uid://clio0lmaj01p2" path="res://Scenes/Player.tscn" id="1_itbdc"]
+[ext_resource type="PackedScene" uid="uid://cdkubo21s3djc" path="res://Scenes/Powerup.tscn" id="2_d04uh"]
 [ext_resource type="PackedScene" uid="uid://bm2qx6mw42r3c" path="res://Scenes/NOTEPOWERUP.tscn" id="3_bcyi6"]
 [ext_resource type="PackedScene" uid="uid://b0su2wwlfdcgv" path="res://Scenes/Portal.tscn" id="4_pxgll"]
+[ext_resource type="TileSet" uid="uid://b80oj70dj3fip" path="res://Assets/Tileset/SimpleTileset.tres" id="5_pgc4o"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Character" parent="." instance=ExtResource("1_itbdc")]
 scale = Vector2(1, 1.04141)
 
-[node name="Camera2D2" parent="Character" instance=ExtResource("2_r6a4g")]
-
 [node name="Powerup" parent="." instance=ExtResource("2_d04uh")]
 position = Vector2(151, 96)
 
 [node name="Area2D" parent="." instance=ExtResource("3_bcyi6")]
-position = Vector2(155, 235)
+position = Vector2(157, 305)
 
 [node name="Portal" parent="." instance=ExtResource("4_pxgll")]
-position = Vector2(335, 144)
+visible = false
+position = Vector2(157, 367)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("5_pgc4o")
+format = 2
+layer_0/tile_data = PackedInt32Array(262168, 196608, 3, 262166, 196608, 3, 262164, 196608, 3, 262162, 196608, 3, 262160, 196608, 3, 262158, 196608, 3, 262156, 196608, 3, 262154, 196608, 3, 262152, 196608, 3, 262150, 196608, 3, 262170, 196608, 3)

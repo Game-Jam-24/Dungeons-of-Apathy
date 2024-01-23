@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://6bk5vh81rvbi"]
+[gd_scene load_steps=6 format=3 uid="uid://1ywod6sg7n33"]
 
 [ext_resource type="TileSet" uid="uid://b80oj70dj3fip" path="res://Assets/Tileset/SimpleTileset.tres" id="1_orkj8"]
 [ext_resource type="PackedScene" uid="uid://b0su2wwlfdcgv" path="res://Scenes/Portal.tscn" id="2_cfo7b"]
-[ext_resource type="PackedScene" uid="uid://dj8kyu8bpd5f8" path="res://Scenes/Player.tscn" id="3_33oud"]
+[ext_resource type="PackedScene" uid="uid://clio0lmaj01p2" path="res://Scenes/Player.tscn" id="3_33oud"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jlvji"]
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_58qkm"]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 2
+sources/0 = SubResource("TileSetAtlasSource_jlvji")
 
 [node name="Hub" type="Node2D"]
 
@@ -20,7 +30,14 @@ position = Vector2(656, 240)
 [node name="PortalThree" parent="TileMap" instance=ExtResource("2_cfo7b")]
 position = Vector2(784, 240)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_33oud")]
-position = Vector2(848, 558)
+[node name="Player" parent="." instance=ExtResource("3_33oud")]
+position = Vector2(336, 302)
+
 platform_floor_layers = 4294967293
 platform_wall_layers = 2
+
+[node name="TileMap2" type="TileMap" parent="."]
+texture_filter = 1
+tile_set = SubResource("TileSet_58qkm")
+format = 2
+layer_0/tile_data = PackedInt32Array(851992, 0, 0)

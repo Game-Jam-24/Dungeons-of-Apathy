@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://bafigw3j0b5vf"]
+
+[ext_resource type="Texture2D" uid="uid://cri5b3l8pt3f4" path="res://Assets/Tileset/ApathyTestSheet.png" id="1_x5t5x"]
+[ext_resource type="Script" path="res://Scripts/ApathySpreadV2.gd" id="2_jcdem"]
+[ext_resource type="PackedScene" uid="uid://clio0lmaj01p2" path="res://Scenes/Player.tscn" id="3_8l5dx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c4g7m"]
+texture = ExtResource("1_x5t5x")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_1/angular_velocity = 0.0
+0:0/0/custom_data_0 = 1
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_1/angular_velocity = 0.0
+1:0/0/custom_data_0 = 2
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_1/angular_velocity = 0.0
+2:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0/custom_data_0 = 3
+
+[sub_resource type="TileSet" id="TileSet_xtb7k"]
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 0
+physics_layer_1/collision_layer = 1
+physics_layer_1/collision_mask = 0
+custom_data_layer_0/name = "ApathyType"
+custom_data_layer_0/type = 2
+sources/2 = SubResource("TileSetAtlasSource_c4g7m")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+tile_set = SubResource("TileSet_xtb7k")
+rendering_quadrant_size = 4
+format = 2
+layer_0/name = "Spread"
+layer_0/tile_data = PackedInt32Array(262141, 2, 0, 262143, 65538, 0, 196609, 131074, 0)
+script = ExtResource("2_jcdem")
+
+[node name="Timer" type="Timer" parent="TileMap"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_8l5dx")]
+
+[connection signal="timeout" from="TileMap/Timer" to="TileMap" method="_on_timer_timeout"]

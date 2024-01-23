@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://nuk52e74875y"]
+[gd_scene load_steps=7 format=3 uid="uid://cdkubo21s3djc"]
 
 [ext_resource type="Script" path="res://Scripts/Powerup.gd" id="1_psbd4"]
-[ext_resource type="Texture2D" uid="uid://ggqq2bo2n6ms" path="res://Assets/Sprites/Powerup placeholder.png" id="2_i2j6j"]
+[ext_resource type="Texture2D" uid="uid://ggqq2bo2n6ms" path="res://Assets/Sprites/Placeholders/Powerup placeholder.png" id="2_6110r"]
 
 [sub_resource type="Animation" id="Animation_2gxeq"]
 length = 0.001
@@ -47,7 +47,7 @@ size = Vector2(32, 32)
 script = ExtResource("1_psbd4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_i2j6j")
+texture = ExtResource("2_6110r")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {

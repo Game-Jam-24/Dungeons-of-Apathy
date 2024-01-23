@@ -4,9 +4,10 @@ var animTrigger = false
 var collision = false
 
 func _on_body_entered(body):
-	collision = true
-	$Label.show()
-	print_debug(collision)
+	if !Player.isInDash:
+		collision = true
+		$Label.show()
+		print_debug(collision)
 
 func _on_body_exited(body):
 	$Label.hide()
