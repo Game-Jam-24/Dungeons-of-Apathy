@@ -22,6 +22,7 @@ var counter = 0
 var apathyScore = 0
 var spawnerNum = 0
 var cellType: Vector2i
+var cellsHit = Vector2i(0,0)
 
 
 func _ready():
@@ -67,13 +68,15 @@ func cell_spreader():
 		cellType = Vector2i(2,0)
 		spreadTime = 3
 
-#func _process(delta):
-	#print_debug($Timer.time_left)
-	#print_debug(apathyScore)
+func _process(delta):
+	cellsHit = Vector2i(Global.cellsHit.x, Global.cellsHit.y)
+	
+	if !Global.cellsNotHit:
+		tilemap.erase_cell(0, cellsHit)
 
-func _input(event):
-	if event.is_action_pressed("ui_accept") and Global.DEBUG:
-		get_tree().reload_current_scene()
+#func _input(event):
+	#if event.is_action_pressed("ui_accept") and Global.DEBUG:
+		#get_tree().reload_current_scene()
 
 func _on_timer_timeout():
 	cell_spreader()

@@ -8,3 +8,6 @@ enum Direction { UP, DOWN, LEFT, RIGHT }
 var isControllerConnected: bool
 
 var isArtifactMorphed: bool
+
+var cellsHit = Vector2i(0,0)
+var cellsNotHit: bool

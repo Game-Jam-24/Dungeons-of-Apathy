@@ -8,6 +8,7 @@ var controllerPosition: Vector2
 var morphArraySprite = ["SwordMorph", "ArtifactMorph"]
 #var combatAnims1 = ["SwordSlash", "SwordStab"]
 
+var cellsHit = [Global.cellsHit]
 var apathyTilemap: TileMap
 
 func _ready():
@@ -58,5 +59,10 @@ func apathy_colission(body: Node2D, body_rid: RID):
 
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	if body is TileMap:
-		apathy_colission(body, body_rid)
-		print_debug(apathy_colission(body, body_rid))
+		cellsHit.clear()
+		cellsHit = apathy_colission(body, body_rid)
+		Global.cellsHit = Vector2i(cellsHit[0].x, cellsHit[0].y)
+		if cellsHit.is_empty():
+			Global.cellsNotHit = true
+		else:
+			Global.cellsNotHit = false
