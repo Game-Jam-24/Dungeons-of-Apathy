@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://clio0lmaj01p2"]
+[gd_scene load_steps=7 format=3 uid="uid://clio0lmaj01p2"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_s5sor"]
 [ext_resource type="Texture2D" uid="uid://drhb2j3soccyt" path="res://Assets/Sprites/Placeholders/Player placeholder.jpg" id="2_3hltg"]
@@ -8,32 +8,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n53s4"]
 size = Vector2(32, 32)
-
-[sub_resource type="GDScript" id="GDScript_pahpd"]
-script/source = "extends ProgressBar
-
-@onready var bar = $\".\"
-@onready var player = $\"...\"
-
-func _ready():
-	update()
-
-func update():
-	bar.value = Player.health
-"
-
-[sub_resource type="GDScript" id="GDScript_23j03"]
-script/source = "extends ProgressBar
-
-@onready var bar = $\".\"
-@onready var player = $\"...\"
-
-func _ready():
-	update()
-
-func update():
-	bar.value = Player.stamina
-"
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
@@ -69,14 +43,12 @@ offset_left = 32.0
 offset_top = 32.0
 offset_right = 128.0
 offset_bottom = 59.0
-script = SubResource("GDScript_pahpd")
 
 [node name="StaminaBar" type="ProgressBar" parent="PlayerHUD"]
 offset_left = 32.0
 offset_top = 64.0
 offset_right = 128.0
 offset_bottom = 91.0
-script = SubResource("GDScript_23j03")
 
 [connection signal="timeout" from="StaminaRecovery" to="." method="_on_stamina_recovery_timeout"]
 [connection signal="timeout" from="DashDuration" to="." method="_on_dash_duration_timeout"]
