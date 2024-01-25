@@ -51,13 +51,6 @@ func _physics_process(delta):
 		speed += 500
 	
 	if stamina > 0 and isSprinting:
-		speed += 70
-	elif stamina < 0:
-		stamina = 0
-	else:
-		speed -= 70
-	
-	if stamina > 0 and isSprinting:
 		speed += 50
 	elif stamina < 0:
 		stamina = 0
@@ -77,7 +70,7 @@ func _physics_process(delta):
 		$Sprite2D/AnimationPlayer.queue("fighting idle")
 		$Sprite2D/AnimationTree.active = false
 		stopWalk = true
-	if (Input.is_action_just_released("ui_use_artifact_1") and stopWalk) or Global.artifactStaminaRunout:
+	if (Input.is_action_just_released("ui_use_artifact_1") and stopWalk) or (Global.artifactStaminaRunout and Global.isArtifactMorphed):
 		$Sprite2D/AnimationPlayer.play_backwards("fighting")
 		await $Sprite2D/AnimationPlayer.animation_finished
 		$Sprite2D/AnimationTree.active = true
@@ -112,7 +105,6 @@ func _on_dash_duration_timeout():
 
 func _on_sprint_exhaustion_timeout():
 	if isSprinting:
-		stamina -= 1
 		stamina -= 4
 
 func _on_artifact_use_exhaustion_timeout():

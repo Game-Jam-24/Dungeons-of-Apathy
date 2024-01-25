@@ -42,7 +42,7 @@ func _physics_process(delta):
 		Player.speed = 100
 		animBugFix = true
 		print_debug("HOLDING DOWN")
-	if (Input.is_action_just_released("ui_use_artifact_1") and animBugFix) or Global.artifactStaminaRunout:
+	if (Input.is_action_just_released("ui_use_artifact_1") and animBugFix) or (Global.artifactStaminaRunout and Global.isArtifactMorphed):
 		Global.isArtifactMorphed = false
 		$Area2D.monitoring = false
 		$".".play_backwards("SwordMorph")
