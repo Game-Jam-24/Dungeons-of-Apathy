@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbqg133v8wt4j"]
+
+[ext_resource type="Texture2D" uid="uid://cri5b3l8pt3f4" path="res://Assets/Tileset/ApathyTestSheet.png" id="1_yytfr"]
+[ext_resource type="Script" path="res://Scripts/ApathySpreadV2.gd" id="2_x01kh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c4g7m"]
+texture = ExtResource("1_yytfr")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0/custom_data_0 = 1
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0/custom_data_0 = 2
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0/custom_data_0 = 3
+
+[sub_resource type="TileSet" id="TileSet_xtb7k"]
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 4
+custom_data_layer_0/name = "ApathyType"
+custom_data_layer_0/type = 2
+sources/2 = SubResource("TileSetAtlasSource_c4g7m")
+
+[node name="Apathy" type="TileMap" groups=["Apathy"]]
+texture_filter = 1
+tile_set = SubResource("TileSet_xtb7k")
+rendering_quadrant_size = 4
+format = 2
+layer_0/name = "Spread"
+layer_0/tile_data = PackedInt32Array(196612, 2, 0)
+script = ExtResource("2_x01kh")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -10,6 +10,7 @@ tile_set = ExtResource("1_uar0j")
 rendering_quadrant_size = 4
 format = 2
 layer_0/name = "Spread"
+layer_0/tile_data = PackedInt32Array(524319, 1, 0)
 script = ExtResource("2_78bxw")
 
 [node name="Timer" type="Timer" parent="."]
