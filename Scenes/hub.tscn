@@ -32,6 +32,8 @@ position = Vector2(784, 240)
 
 [node name="Player" parent="." instance=ExtResource("3_33oud")]
 position = Vector2(336, 302)
+platform_floor_layers = 4294967293
+platform_wall_layers = 2
 
 [node name="TileMap2" type="TileMap" parent="."]
 texture_filter = 1

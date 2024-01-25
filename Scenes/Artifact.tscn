@@ -181,14 +181,17 @@ alpha_curve = SubResource("CurveTexture_8buie")
 turbulence_enabled = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ykdne"]
-size = Vector2(32.5, 8.75)
+size = Vector2(33.75, 8.75)
 
 [node name="Node2D2" type="Node2D"]
 
 [node name="Artifact" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(1.6, 1.6)
 sprite_frames = SubResource("SpriteFrames_f3y8k")
-animation = &"Artifact"
+animation = &"SwordMorph"
+frame = 9
+frame_progress = 1.0
 speed_scale = 3.0
 offset = Vector2(32, 0)
 script = ExtResource("9_6riqk")
@@ -206,7 +209,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Artifact/Area2D"]
-position = Vector2(31.25, 1.49012e-07)
+position = Vector2(30.625, 1.49012e-07)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_ykdne")
 

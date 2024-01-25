@@ -48,13 +48,14 @@ func _physics_process(delta):
 	if !$DashDuration.is_stopped():
 		$Area2D.monitoring = true
 		Player.isInDash = true
-		speed += 700
+		speed += 500
 	
 	if stamina > 0 and isSprinting:
-		speed += 100
+		speed += 70
+	elif stamina < 0:
+		stamina = 0
 	else:
-		speed -= 100
-		speed += 400
+		speed -= 70
 	
 	if stamina > 0 and isSprinting:
 		speed += 50
@@ -106,9 +107,7 @@ func _on_stamina_recovery_timeout():
 
 func _on_dash_duration_timeout():
 	Player.isInDash = false
-	speed -= 700
-	speed -= 400
-	$Area2D.monitoring = false
+	speed -= 500
 	#accel -= 100
 
 func _on_sprint_exhaustion_timeout():
