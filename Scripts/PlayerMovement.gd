@@ -12,7 +12,7 @@ extends CharacterBody2D
 
 var speed = Player.speed
 var accel = Player.movementAcceleration
-var stamina = 100
+var stamina = Player.stamina
 var isSprinting = Player.isSprinting
 var health = Player.health
 var input: Vector2
