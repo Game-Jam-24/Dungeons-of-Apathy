@@ -1,5 +1,6 @@
 [gd_resource type="TileSet" load_steps=4 format=3 uid="uid://ci8shtpcgqun6"]
 
+[ext_resource type="Texture2D" path="res://Assets/Tileset/apatthy.png" id="1_1c2n7"]
 [ext_resource type="Texture2D" uid="uid://cri5b3l8pt3f4" path="res://Assets/Tileset/ApathyTestSheet.png" id="2_adbac"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_avctn"]
