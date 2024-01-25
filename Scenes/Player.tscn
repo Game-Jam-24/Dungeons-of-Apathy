@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" path="res://Assets/Sprites/hero/hero sprite sheet.png" id="2_isv80"]
 [ext_resource type="PackedScene" uid="uid://qnp1arl2bgof" path="res://Scenes/Artifact.tscn" id="3_ti04h"]
 [ext_resource type="PackedScene" uid="uid://byntgwjgvfdmc" path="res://MouseCursor.tscn" id="4_jd3te"]
-[ext_resource type="Texture2D" uid="uid://dvxieijojbh2k" path="res://Assets/Sprites/Fog of war.png" id="5_xg86l"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Fog of war.png" id="5_xg86l"]
 
 [sub_resource type="Animation" id="Animation_3vg1k"]
 length = 0.001

@@ -48,14 +48,12 @@ func _physics_process(delta):
 	if !$DashDuration.is_stopped():
 		$Area2D.monitoring = true
 		Player.isInDash = true
-<<<<<<< Updated upstream
 		speed += 700
 	
 	if stamina > 0 and isSprinting:
 		speed += 100
 	else:
 		speed -= 100
-=======
 		speed += 400
 	
 	if stamina > 0 and isSprinting:
@@ -64,7 +62,6 @@ func _physics_process(delta):
 		stamina = 0
 	else:
 		speed -= 50
->>>>>>> Stashed changes
 	
 	if !stopWalk:
 		$Sprite2D/AnimationTree.set("parameters/BlendSpace2D/blend_position", velocity)
@@ -109,19 +106,14 @@ func _on_stamina_recovery_timeout():
 
 func _on_dash_duration_timeout():
 	Player.isInDash = false
-<<<<<<< Updated upstream
 	speed -= 700
-=======
 	speed -= 400
 	$Area2D.monitoring = false
->>>>>>> Stashed changes
 	#accel -= 100
 
 func _on_sprint_exhaustion_timeout():
 	if isSprinting:
-<<<<<<< Updated upstream
 		stamina -= 1
-=======
 		stamina -= 4
 
 func _on_artifact_use_exhaustion_timeout():
@@ -166,4 +158,3 @@ func _on_apathy_damage_ticker_timeout():
 		health -= 1
 	else:
 		speed = Player.speed
->>>>>>> Stashed changes
