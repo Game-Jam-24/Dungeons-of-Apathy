@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://xocbytoqrmol"]
+
+[ext_resource type="Script" path="res://Scripts/UI/HealthBar.gd" id="1_wquic"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 165.0
+offset_bottom = 32.0
+script = ExtResource("1_wquic")
