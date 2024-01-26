@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://byvv46gfvlh0f"]
+[gd_scene load_steps=7 format=3 uid="uid://byvv46gfvlh0f"]
 
 [ext_resource type="Texture2D" uid="uid://bpvlnquy64kry" path="res://Assets/main hub world.png" id="1_fcvkq"]
 [ext_resource type="PackedScene" uid="uid://clio0lmaj01p2" path="res://Scenes/Player.tscn" id="2_c28nb"]
+[ext_resource type="Script" path="res://EnterLevel.gd" id="3_2pidv"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_arxjv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oekvh"]
+font_size = 10
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07dt4"]
+size = Vector2(11, 4)
 
 [node name="Node2D" type="Node2D"]
 
@@ -53,7 +62,49 @@ scale = Vector2(0.523221, 0.130933)
 color = Color(0.301961, 0.133333, 0.027451, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_arxjv")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-build_mode = 1
-polygon = PackedVector2Array(-190, -122, 18, -122, 18, -122, 18, -163, -26, -163, -25, -166, 41, -189, 82, -214, 101, -198, 123, -198, 136, -188, 141, -163, 40, -163, 40, -122, 165, -122, 165, -163, 169, -163, 169, -203, 360, -203, 360, -187, 360, -151, 404, -123, 484, -131, 484, -70, 443, -66, 444, -30, 488, -1, 568, -9, 566, 62, 526, 65, 527, 102, 571, 130, 649, 123, 649, 181, 608, 184, 608, 220, 652, 248, 759, 240, 756, 339, 718, 342, 717, 378, 762, 407, 764, 418, 764, 447, -591, 453, -590, 420, -598, 415, -630, 415, -633, 340, -576, 345, -531, 316, -531, 280, -538, 277, -570, 278, -572, 174, -511, 179, -466, 151, -466, 114, -475, 111, -506, 111, -507, 25, -444, 30, -400, 2, -400, -35, -409, -38, -439, -38, -442, -129, -393, -123, -348, -151, -347, -187, -357, -191, -387, -191, -387, -203, -172, -203, -172, -198, -190, -179)
+polygon = PackedVector2Array(-591, 451, -591, 418, -598, 415, -629, 415, -633, 340, -576, 345, -531, 316, -531, 280, -539, 277, -570, 277, -571, 174, -511, 179, -466, 151, -465, 114, -474, 111, -506, 110, -508, 24, -445, 31, -400, 1, -400, -34, -409, -38, -440, -38, -442, -128, -393, -123, -348, -151, -347, -187, -355, -191, -388, -191, -387, -203, -608, -190, -710, 407, -626, 461)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-387, -203, -96, -203, -119, -196, -169, -196, -169, -198, -172, -198, -172, -196, -174, -196, -174, -195, -175, -195, -175, -193, -179, -193, -179, -191, -180, -191, -180, -188, -182, -188, -182, -187, -182, -186, -184, -186, -184, -183, -185, -183, -185, -181, -187, -181, -187, -180, -189, -180, -189, -175, -190, -175, -190, -122, -44, -122, -44, -127, -31, -127, -31, -122, 19, -122, 19, -163, -27, -163, -27, -167, 13, -180, 43, -193, 52, -200, 56, -201, 71, -213, 77, -216, 85, -218, 95, -213, 99, -206, 104, -199, 119, -199, 120, -205, 99, -223, 129, -231, 136, -232, 145, -231, 153, -227, 155, -216, 153, -204, 144, -194, 144, -163, 40, -163, 40, -122, 165, -122, 165, -163, 169, -163, 169, -203, 400, -203, 363, -348, -344, -334)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(400, -203, 399, -191, 368, -191, 360, -187, 361, -151, 405, -123, 484, -131, 484, -69, 448, -68, 444, -65, 445, -30, 488, -1, 567, -8, 567, 62, 526, 65, 527, 102, 571, 131, 650, 123, 649, 181, 616, 181, 609, 184, 609, 219, 654, 249, 759, 239, 758, 339, 726, 339, 718, 342, 718, 378, 762, 407, 762, 478, 884, 397, 586, -182)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-591, 447, 762, 448, 769, 598, -618, 619)
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+texture_filter = 1
+offset_left = 69.0
+offset_top = -159.0
+offset_right = 127.0
+offset_bottom = -136.0
+text = "Shop closed"
+label_settings = SubResource("LabelSettings_oekvh")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+z_index = 1
+texture_filter = 1
+offset_left = -65.0
+offset_top = -158.0
+offset_right = -7.0
+offset_bottom = -135.0
+text = "ᓭℸ ̣ ᔑ∷ℸ ̣"
+label_settings = SubResource("LabelSettings_oekvh")
+horizontal_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-37.5, -124)
+shape = SubResource("RectangleShape2D_07dt4")
+script = ExtResource("3_2pidv")
+
+[connection signal="body_entered" from="Area2D" to="Area2D/CollisionShape2D" method="_on_area_2d_body_entered"]

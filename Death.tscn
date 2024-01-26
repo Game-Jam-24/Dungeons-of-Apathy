@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://h4f2xlsmomyv"]
+[gd_scene load_steps=8 format=3 uid="uid://h4f2xlsmomyv"]
 
 [ext_resource type="Script" path="res://Death.gd" id="1_1auvd"]
-[ext_resource type="Texture2D" uid="uid://bfah6njxylinl" path="res://Assets/Game_Over_Screen.png" id="1_gfxqh"]
 [ext_resource type="AudioStream" uid="uid://v0u41itefgbv" path="res://Assets/Music/Sfx/Player Sfx/Death sfx.wav" id="2_io6mv"]
+[ext_resource type="Texture2D" uid="uid://dctl40d3b0a8" path="res://Game_Over_Screen.png" id="2_r6xqe"]
 [ext_resource type="Texture2D" uid="uid://coqj2fcsaxvcn" path="res://addons/controller_icons/assets/key/space.png" id="4_1k4k7"]
 [ext_resource type="Script" path="res://addons/controller_icons/objects/TextureRect.gd" id="5_wa1vb"]
+[ext_resource type="Texture2D" uid="uid://xe4n818le3p8" path="res://addons/controller_icons/assets/key/e.png" id="6_x1axo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mrkhi"]
 font_size = 32
@@ -16,7 +17,7 @@ script = ExtResource("1_1auvd")
 texture_filter = 1
 offset_right = 1053.0
 offset_bottom = 610.0
-texture = ExtResource("1_gfxqh")
+texture = ExtResource("2_r6xqe")
 expand_mode = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -25,12 +26,13 @@ anchor_mode = 0
 zoom = Vector2(1.23, 1.23)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 395.0
-offset_top = 462.0
-offset_right = 827.0
-offset_bottom = 590.0
-text = "Press           to Restart"
+offset_left = 324.0
+offset_top = 448.0
+offset_right = 756.0
+offset_bottom = 576.0
+text = "Press           to keep going"
 label_settings = SubResource("LabelSettings_mrkhi")
+horizontal_alignment = 1
 
 [node name="Death" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_io6mv")
@@ -39,12 +41,33 @@ autoplay = true
 
 [node name="DashButton" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(80, 80)
-offset_left = 483.0
-offset_top = 446.0
-offset_right = 563.0
-offset_bottom = 526.0
+offset_left = 439.0
+offset_top = 432.0
+offset_right = 519.0
+offset_bottom = 512.0
 texture = ExtResource("4_1k4k7")
 expand_mode = 1
 script = ExtResource("5_wa1vb")
 path = "ui_dash"
+max_width = 80
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 329.0
+offset_top = 512.0
+offset_right = 761.0
+offset_bottom = 640.0
+text = "Press         to give up"
+label_settings = SubResource("LabelSettings_mrkhi")
+horizontal_alignment = 1
+
+[node name="Interact" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(80, 80)
+offset_left = 470.0
+offset_top = 499.0
+offset_right = 550.0
+offset_bottom = 579.0
+texture = ExtResource("6_x1axo")
+expand_mode = 1
+script = ExtResource("5_wa1vb")
+path = "ui_powerup_pickup"
 max_width = 80

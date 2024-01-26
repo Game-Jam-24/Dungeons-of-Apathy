@@ -233,7 +233,7 @@ one_shot = true
 
 [node name="HitCell" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("33_vbxd2")
-volume_db = -7.0
+volume_db = -9.0
 
 [connection signal="animation_finished" from="Artifact" to="Artifact" method="_on_animation_finished"]
 [connection signal="body_shape_entered" from="Artifact/Area2D" to="Artifact" method="_on_area_2d_body_shape_entered"]
