@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://eq4ur6qottco"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://ddws2rc0rk5gk"]
 
 [ext_resource type="Texture2D" uid="uid://cri5b3l8pt3f4" path="res://Assets/Tileset/ApathyTestSheet.png" id="1_hcas2"]
 [ext_resource type="Texture2D" uid="uid://btavvqsse4m1y" path="res://Assets/Tileset/apatthy.png" id="1_l0dhr"]

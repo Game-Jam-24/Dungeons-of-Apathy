@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bm2qx6mw42r3c"]
 
 [ext_resource type="Script" path="res://Scripts/notePowerup.gd" id="1_u2kuv"]
-[ext_resource type="SpriteFrames" uid="uid://6u2c0ax87avu" path="res://Assets/Sprites/Ghost.tres" id="2_hx4nj"]
+[ext_resource type="SpriteFrames" uid="uid://645jjxhv8jrf" path="res://Assets/Sprites/Ghost.tres" id="2_hx4nj"]
 
 [sub_resource type="Animation" id="Animation_2gxeq"]
 length = 0.001
@@ -56,7 +56,7 @@ script = ExtResource("1_u2kuv")
 texture_filter = 1
 sprite_frames = ExtResource("2_hx4nj")
 autoplay = "default"
-frame_progress = 0.639243
+frame_progress = 0.729883
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 root_node = NodePath("../..")
