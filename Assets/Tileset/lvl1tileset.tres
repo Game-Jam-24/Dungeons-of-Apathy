@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://816t3w2cp6lk"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bse1l4sygsqau"]
 
 [ext_resource type="Texture2D" uid="uid://d13rnkarituxk" path="res://Assets/Tileset/lvl1tilest.png" id="1_87gsv"]
 
@@ -263,6 +263,7 @@ texture_region_size = Vector2i(32, 32)
 10:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14, -14, 14, -14, 14, 14, -14, 14)
 10:3/0/terrains_peering_bit/bottom_side = 0
 10:3/0/terrains_peering_bit/left_side = 0
+10:3/0/terrains_peering_bit/top_left_corner = 0
 10:3/0/terrains_peering_bit/top_side = 0
 9:3/0 = 0
 9:3/0/terrain_set = 0
@@ -284,6 +285,7 @@ texture_region_size = Vector2i(32, 32)
 8:3/0/terrains_peering_bit/right_side = 0
 8:3/0/terrains_peering_bit/left_side = 0
 8:3/0/terrains_peering_bit/top_side = 0
+8:3/0/terrains_peering_bit/top_right_corner = 0
 7:3/0 = 0
 7:3/0/terrain_set = 0
 7:3/0/terrain = 0

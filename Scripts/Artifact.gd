@@ -10,12 +10,14 @@ var morphArraySprite = ["SwordMorph", "ArtifactMorph"]
 
 var cellsHit = [Global.cellsHit]
 var apathyTilemap: TileMap
+var animBugFix: bool
 
 func _ready():
 	$".".play("Artifact")
 	Global.isArtifactMorphed = false
 	$".".offset = Vector2(32, 0)
 	$Area2D.monitoring = false
+	animBugFix = false
 
 func _physics_process(delta):
 	controllerAngle = Input.get_vector("ui_controller_aim_-x", "ui_controller_aim_x", "ui_controller_aim_-y", "ui_controller_aim_y")
@@ -25,27 +27,31 @@ func _physics_process(delta):
 	else:
 		if Global.isControllerConnected and controllerAngle.length() > deadzone:
 			controllerPosition = controllerAngle + $".".global_position
-			$".".global_rotation =  rotate_toward($".".global_rotation, $"..".get_angle_to(controllerPosition), delta * 9)
+			$".".global_rotation =  rotate_toward($".".global_rotation, $"..".get_angle_to(controllerPosition), delta * 7)
 		elif !Global.isControllerConnected:
-			$".".global_rotation = rotate_toward($".".global_rotation, $"..".get_angle_to(get_global_mouse_position()), delta * 9)
+			$".".global_rotation = rotate_toward($".".global_rotation, $"..".get_angle_to(get_global_mouse_position()), delta * 7)
 	
 	if Input.is_action_just_pressed("ui_use_artifact_1"):
 		Global.isArtifactMorphed = true
 		$".".play("ArtifactMorph")
 		await $".".animation_finished
-		$".".play("SwordMorph")
 		$Area2D.monitoring = true
+		$".".play("SwordMorph")
 		$Fire2.hide()
 		$Fire.show()
+		Player.speed = 100
+		animBugFix = true
 		print_debug("HOLDING DOWN")
-	if Input.is_action_just_released("ui_use_artifact_1"):
+	if (Input.is_action_just_released("ui_use_artifact_1") and animBugFix) or (Global.artifactStaminaRunout and Global.isArtifactMorphed):
 		Global.isArtifactMorphed = false
+		$Area2D.monitoring = false
 		$".".play_backwards("SwordMorph")
 		await $".".animation_finished
 		$".".play("Artifact")
-		$Area2D.monitoring = false
 		$Fire.hide()
 		$Fire2.show()
+		Player.speed = 150
+		Global.artifactStaminaRunout = false
 		print_debug("IS RELEASED")
 
 func apathy_colission(body: Node2D, body_rid: RID):
