@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cdkubo21s3djc"]
 
 [ext_resource type="Script" path="res://Scripts/Powerup.gd" id="1_psbd4"]
-[ext_resource type="SpriteFrames" uid="uid://bv786ju8nxjd6" path="res://lightning.tres" id="2_78f6o"]
+[ext_resource type="SpriteFrames" uid="uid://st271x2lw5um" path="res://lightning.tres" id="2_fo8vy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpemt"]
 size = Vector2(32, 32)
@@ -10,11 +10,12 @@ size = Vector2(32, 32)
 script = ExtResource("1_psbd4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("2_78f6o")
-frame_progress = 0.284782
+texture_filter = 1
+sprite_frames = ExtResource("2_fo8vy")
+autoplay = "default"
+frame_progress = 0.774351
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_qpemt")
 
 [node name="Timer" type="Timer" parent="."]

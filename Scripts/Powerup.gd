@@ -9,7 +9,8 @@ func _on_body_entered(body):
 		$Timer.start(2)
 		animTrigger = true
 		$CollisionShape2D.queue_free()
-		$Sprite2D/AnimationPlayer.play("SpeedPowerup")
+		$AnimatedSprite2D.play("default")
+		$AnimatedSprite2D.hide()
 
 func _on_timer_timeout():
 	Player.speed -= 200

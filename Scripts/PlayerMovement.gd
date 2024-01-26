@@ -57,9 +57,7 @@ func get_input():
 func player_death():
 	if dead == true:
 		Player.collectableCounter = 0
-		$Audio/Death.play()
-		await $Audio/Death.finished
-		get_tree().change_scene_to_file("res://Scenes/static_dungeon.tscn")
+		get_tree().change_scene_to_file("res://Death.tscn")
 
 func _physics_process(delta):
 	move_and_slide() #allows the player to move and to be able to slide along colliders (walls)
@@ -190,4 +188,3 @@ func _on_apathy_damage_ticker_timeout():
 			health -= 6
 		else:
 			speed = Player.speed
-	print_debug(onApathyArray)

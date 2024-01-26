@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://h4f2xlsmomyv"]
+
+[ext_resource type="Script" path="res://Death.gd" id="1_1auvd"]
+[ext_resource type="Texture2D" uid="uid://bfah6njxylinl" path="res://Assets/Game_Over_Screen.png" id="1_gfxqh"]
+[ext_resource type="AudioStream" uid="uid://v0u41itefgbv" path="res://Assets/Music/Sfx/Player Sfx/Death sfx.wav" id="2_io6mv"]
+[ext_resource type="Texture2D" uid="uid://coqj2fcsaxvcn" path="res://addons/controller_icons/assets/key/space.png" id="4_1k4k7"]
+[ext_resource type="Script" path="res://addons/controller_icons/objects/TextureRect.gd" id="5_wa1vb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mrkhi"]
+font_size = 32
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_1auvd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 1053.0
+offset_bottom = 610.0
+texture = ExtResource("1_gfxqh")
+expand_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(6, 0)
+anchor_mode = 0
+zoom = Vector2(1.23, 1.23)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 395.0
+offset_top = 462.0
+offset_right = 827.0
+offset_bottom = 590.0
+text = "Press           to Restart"
+label_settings = SubResource("LabelSettings_mrkhi")
+
+[node name="Death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_io6mv")
+volume_db = -3.0
+autoplay = true
+
+[node name="DashButton" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(80, 80)
+offset_left = 483.0
+offset_top = 446.0
+offset_right = 563.0
+offset_bottom = 526.0
+texture = ExtResource("4_1k4k7")
+expand_mode = 1
+script = ExtResource("5_wa1vb")
+path = "ui_dash"
+max_width = 80

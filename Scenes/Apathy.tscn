@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dbqg133v8wt4j"]
 
-[ext_resource type="TileSet" uid="uid://eq4ur6qottco" path="res://Assets/Tileset/ApathyTileset.tres" id="1_rugsi"]
+[ext_resource type="TileSet" uid="uid://ddws2rc0rk5gk" path="res://Assets/Tileset/ApathyTileset.tres" id="1_rugsi"]
 [ext_resource type="Script" path="res://Scripts/ApathySpreadV2.gd" id="2_x01kh"]
 
 [node name="Apathy" type="TileMap" groups=["Apathy"]]

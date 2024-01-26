@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bm2qx6mw42r3c"]
 
 [ext_resource type="Script" path="res://Scripts/notePowerup.gd" id="1_u2kuv"]
-[ext_resource type="SpriteFrames" uid="uid://cs1dar8p6xlk" path="res://Assets/Sprites/Ghost.tres" id="2_hx4nj"]
+[ext_resource type="SpriteFrames" uid="uid://645jjxhv8jrf" path="res://Assets/Sprites/Ghost.tres" id="2_hx4nj"]
 [ext_resource type="Texture2D" uid="uid://dktlp4ua1e13l" path="res://Assets/Shaders/circle.png" id="3_ghkpy"]
 
 [sub_resource type="Animation" id="Animation_2gxeq"]

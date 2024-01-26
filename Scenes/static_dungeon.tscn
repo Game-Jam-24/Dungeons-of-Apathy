@@ -166,7 +166,7 @@ offset_left = 245.0
 offset_top = -853.0
 offset_right = 341.0
 offset_bottom = -787.0
-text = "Use mouse or right joystick to Aim."
+text = "Use mouse or right joystick to Aim the Sword"
 label_settings = SubResource("LabelSettings_4emvq")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -186,11 +186,12 @@ path = "ui_use_artifact_1"
 
 [node name="Label" type="Label" parent="Tutorial/UseArtifact"]
 layout_mode = 0
-offset_left = 44.0
-offset_top = -1.0
-offset_right = 109.0
-offset_bottom = 36.0
-text = "to use the Artifact."
+offset_left = 43.0
+offset_top = -8.0
+offset_right = 108.0
+offset_bottom = 49.0
+text = "to use the Artifact
+(hold)"
 label_settings = SubResource("LabelSettings_4emvq")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -210,11 +211,23 @@ path = "ui_powerup_pickup"
 
 [node name="Label" type="Label" parent="Tutorial/Interact"]
 layout_mode = 0
-offset_left = 33.0
+offset_left = 37.0
 offset_top = -10.0
-offset_right = 118.0
+offset_right = 128.0
 offset_bottom = 50.0
-text = "to interact and collect souls."
+text = "to interact and collect Souls"
+label_settings = SubResource("LabelSettings_4emvq")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Apathy2" type="Label" parent="Tutorial"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = -401.0
+offset_right = 115.0
+offset_bottom = -290.0
+text = "Clear the Apathy to get to the Souls"
 label_settings = SubResource("LabelSettings_4emvq")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -222,11 +235,11 @@ autowrap_mode = 2
 
 [node name="Apathy" type="Label" parent="Tutorial"]
 layout_mode = 0
-offset_left = 252.0
-offset_top = -351.0
-offset_right = 353.0
-offset_bottom = -240.0
-text = "Clear the Apathy and collect the lost souls."
+offset_left = 242.0
+offset_top = -399.0
+offset_right = 318.0
+offset_bottom = -288.0
+text = "Collect all the souls to Win!"
 label_settings = SubResource("LabelSettings_4emvq")
 horizontal_alignment = 1
 vertical_alignment = 1
