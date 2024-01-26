@@ -61,12 +61,12 @@ func cell_spreader():
 			#print_debug(dungeon.get_cell_atlas_coords(0,dungeon_tile_position))
 			#print_debug(str("Apathy Tile ",nearCell," on Dungeon Tile ",dungeon_tile_position))
 			
-	if apathyScore > 100 and apathyScore < 300:
+	if apathyScore > 300 and apathyScore < 600:
 		cellType = Vector2i(1,0)
-		spreadTime = 1
-	elif apathyScore >= 300:
+		spreadTime = 2
+	elif apathyScore >= 600:
 		cellType = Vector2i(2,0)
-		spreadTime = 3
+		spreadTime = 6
 
 func _process(delta):
 	cellsHit = Vector2i(Global.cellsHit.x, Global.cellsHit.y)

@@ -1,9 +1,94 @@
-[gd_scene load_steps=10 format=3 uid="uid://clio0lmaj01p2"]
+[gd_scene load_steps=24 format=3 uid="uid://clio0lmaj01p2"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_s5sor"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/hero/hero sprite sheet.png" id="2_isv80"]
+[ext_resource type="Script" path="res://Scripts/PlayerHUD.gd" id="2_88ef5"]
+[ext_resource type="Texture2D" uid="uid://rfruj2r0pl1a" path="res://Assets/Sprites/hero/hero sprite sheet.png" id="2_isv80"]
 [ext_resource type="PackedScene" uid="uid://qnp1arl2bgof" path="res://Scenes/Artifact.tscn" id="3_ti04h"]
 [ext_resource type="PackedScene" uid="uid://byntgwjgvfdmc" path="res://MouseCursor.tscn" id="4_jd3te"]
+[ext_resource type="Texture2D" uid="uid://dvxieijojbh2k" path="res://Assets/Sprites/Fog of war.png" id="5_xg86l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4kije"]
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qq06b"]
+font_size = 12
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_3vg1k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7iukw"]
+resource_name = "fighting"
+length = 0.5
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_todqm"]
+resource_name = "fighting idle"
+length = 2.0
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 19, 22]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -5), Vector2(0, -1), Vector2(0, -5)]
+}
 
 [sub_resource type="Animation" id="Animation_ayvt8"]
 resource_name = "walk"
@@ -23,58 +108,131 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
 
-[sub_resource type="Animation" id="Animation_3vg1k"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
-[sub_resource type="Animation" id="Animation_7iukw"]
-resource_name = "fighting"
-length = 2.00001
-step = 0.125
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1, 1.125, 1.25, 1.375, 1.625, 1.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 14, 24]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hnn54"]
 _data = {
 "RESET": SubResource("Animation_3vg1k"),
 "fighting": SubResource("Animation_7iukw"),
+"fighting idle": SubResource("Animation_todqm"),
 "walk": SubResource("Animation_ayvt8")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n53s4"]
-size = Vector2(32, 32)
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0t8u6"]
+animation = &"walk"
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pfpxj"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5x28e"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_anpvu"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_op0sv"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_byhfa"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_0t8u6")
+blend_point_0/pos = Vector2(1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_pfpxj")
+blend_point_1/pos = Vector2(-1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_5x28e")
+blend_point_2/pos = Vector2(0, 1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_anpvu")
+blend_point_3/pos = Vector2(0, -1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_op0sv")
+blend_point_4/pos = Vector2(0, 0)
+blend_mode = 1
+sync = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_80qko"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_sx4ok"]
+states/BlendSpace2D/node = SubResource("AnimationNodeBlendSpace2D_byhfa")
+states/BlendSpace2D/position = Vector2(394, 111)
+states/Start/position = Vector2(225, 111)
+transitions = ["Start", "BlendSpace2D", SubResource("AnimationNodeStateMachineTransition_80qko")]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lo3x8"]
+radius = 6.0
+height = 28.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcunu"]
+size = Vector2(13, 7)
+
+[node name="Player" type="CharacterBody2D"]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_s5sor")
 
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("2_88ef5")
+
+[node name="HealthBar" type="ProgressBar" parent="HUD"]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 192.0
+offset_bottom = 56.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="HUD/HealthBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.333
+anchor_top = -1.0
+anchor_right = -0.333
+anchor_bottom = -1.0
+offset_left = 53.28
+offset_top = 24.0
+offset_right = 213.28
+offset_bottom = 48.0
+text = "Health"
+label_settings = SubResource("LabelSettings_4kije")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StaminaBar" type="ProgressBar" parent="HUD"]
+offset_left = 32.0
+offset_top = 57.0
+offset_right = 192.0
+offset_bottom = 64.0
+show_percentage = false
+
+[node name="LoreCounter" type="Label" parent="HUD"]
+offset_left = 32.0
+offset_top = 64.0
+offset_right = 122.0
+offset_bottom = 87.0
+text = "Lore Collected: "
+label_settings = SubResource("LabelSettings_qq06b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Counter" type="Label" parent="HUD/LoreCounter"]
+layout_mode = 0
+offset_left = 96.0
+offset_right = 160.0
+offset_bottom = 23.0
+text = "0"
+label_settings = SubResource("LabelSettings_qq06b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -512.0
+offset_top = -288.0
+offset_right = 541.0
+offset_bottom = 322.0
+texture = ExtResource("5_xg86l")
+expand_mode = 2
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -2)
-scale = Vector2(1.5, 1.5)
+
 texture = ExtResource("2_isv80")
+offset = Vector2(0, 1)
 hframes = 13
 vframes = 2
 frame = 1
@@ -84,13 +242,17 @@ libraries = {
 "": SubResource("AnimationLibrary_hnn54")
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-2, -1)
-shape = SubResource("RectangleShape2D_n53s4")
+[node name="AnimationTree" type="AnimationTree" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_hnn54")
+}
+tree_root = SubResource("AnimationNodeStateMachine_sx4ok")
+anim_player = NodePath("../AnimationPlayer")
+parameters/BlendSpace2D/blend_position = Vector2(0.00255752, 0.015873)
+
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(3.5, 3.5)
 position_smoothing_enabled = true
 
 [node name="Artifact" parent="." instance=ExtResource("3_ti04h")]
@@ -104,6 +266,26 @@ one_shot = true
 
 [node name="SprintExhaustion" type="Timer" parent="."]
 
+[node name="ArtifactUseExhaustion" type="Timer" parent="."]
+
+[node name="ApathyDamageTicker" type="Timer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CapsuleShape2D_lo3x8")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 10.5)
+shape = SubResource("RectangleShape2D_mcunu")
+
 [connection signal="timeout" from="StaminaRecovery" to="." method="_on_stamina_recovery_timeout"]
 [connection signal="timeout" from="DashDuration" to="." method="_on_dash_duration_timeout"]
 [connection signal="timeout" from="SprintExhaustion" to="." method="_on_sprint_exhaustion_timeout"]
+[connection signal="timeout" from="ArtifactUseExhaustion" to="." method="_on_artifact_use_exhaustion_timeout"]
+[connection signal="timeout" from="ApathyDamageTicker" to="." method="_on_apathy_damage_ticker_timeout"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_shape_exited" from="Area2D" to="." method="_on_area_2d_body_shape_exited"]
