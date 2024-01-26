@@ -11,3 +11,4 @@ var maxStamina: int = 100
 var stamina: int = maxStamina
 
 var collectableCounter: int = 0
+var collectableMax: int = 8

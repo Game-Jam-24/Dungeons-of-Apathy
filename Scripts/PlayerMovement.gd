@@ -99,6 +99,9 @@ func _physics_process(delta):
 		Global.artifactStaminaRunout = false
 
 func _process(delta):
+	if Player.collectableCounter >= Player.collectableMax:
+		pass
+	
 	if health <= 0 and dead == false:
 		dead = true
 		player_death()
