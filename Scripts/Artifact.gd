@@ -66,6 +66,8 @@ func apathy_colission(body: Node2D, body_rid: RID):
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	if body is TileMap:
 		cellsHit.clear()
+		$"../HitCell".pitch_scale = randf_range(0.5, 1.5)
+		$"../HitCell".play()
 		cellsHit = apathy_colission(body, body_rid)
 		Global.cellsHit = Vector2i(cellsHit[0].x, cellsHit[0].y)
 		if cellsHit.is_empty():

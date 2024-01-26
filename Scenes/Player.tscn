@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://clio0lmaj01p2"]
+[gd_scene load_steps=28 format=3 uid="uid://clio0lmaj01p2"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_s5sor"]
 [ext_resource type="Script" path="res://Scripts/PlayerHUD.gd" id="2_88ef5"]
@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://qnp1arl2bgof" path="res://Scenes/Artifact.tscn" id="3_ti04h"]
 [ext_resource type="PackedScene" uid="uid://byntgwjgvfdmc" path="res://MouseCursor.tscn" id="4_jd3te"]
 [ext_resource type="Texture2D" uid="uid://dvxieijojbh2k" path="res://Assets/Sprites/Fog of war.png" id="5_xg86l"]
+[ext_resource type="AudioStream" uid="uid://b0upy0xlcx7is" path="res://Assets/Music/Sfx/Player Sfx/Walking.wav" id="7_m6xyv"]
+[ext_resource type="AudioStream" uid="uid://dpqnrmpj310pn" path="res://Assets/Music/Sfx/Player Sfx/Being hit.wav" id="8_1ryd8"]
+[ext_resource type="AudioStream" uid="uid://bu5pvh1jtvslj" path="res://Assets/Music/Sfx/Player Sfx/Sprinting.wav" id="9_qscoy"]
+[ext_resource type="AudioStream" uid="uid://v0u41itefgbv" path="res://Assets/Music/Sfx/Player Sfx/Death sfx.wav" id="10_6ji6j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4kije"]
 outline_size = 3
@@ -159,7 +163,7 @@ radius = 6.0
 height = 28.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mcunu"]
-size = Vector2(13, 7)
+size = Vector2(7, 3)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
@@ -170,6 +174,7 @@ script = ExtResource("1_s5sor")
 script = ExtResource("2_88ef5")
 
 [node name="HealthBar" type="ProgressBar" parent="HUD"]
+self_modulate = Color(0.745098, 0, 0, 1)
 offset_left = 32.0
 offset_top = 32.0
 offset_right = 192.0
@@ -193,10 +198,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaminaBar" type="ProgressBar" parent="HUD"]
+self_modulate = Color(0.568627, 1, 1, 1)
 offset_left = 32.0
 offset_top = 57.0
 offset_right = 192.0
-offset_bottom = 64.0
+offset_bottom = 67.0
 show_percentage = false
 
 [node name="LoreCounter" type="Label" parent="HUD"]
@@ -273,12 +279,31 @@ position = Vector2(0, -3)
 shape = SubResource("CapsuleShape2D_lo3x8")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 5
-collision_mask = 5
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.5, 10.5)
 shape = SubResource("RectangleShape2D_mcunu")
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="Walking" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("7_m6xyv")
+
+[node name="BeingHit" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("8_1ryd8")
+volume_db = -11.244
+pitch_scale = 0.82
+
+[node name="Sprinting" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("9_qscoy")
+volume_db = -7.0
+autoplay = true
+
+[node name="Death" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("10_6ji6j")
+volume_db = -3.0
 
 [connection signal="timeout" from="StaminaRecovery" to="." method="_on_stamina_recovery_timeout"]
 [connection signal="timeout" from="DashDuration" to="." method="_on_dash_duration_timeout"]

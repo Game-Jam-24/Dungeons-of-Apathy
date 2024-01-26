@@ -8,7 +8,7 @@ const apathy_tile_size: Vector2i = Vector2i(16,16)
 const dungeon_floor_atlas_coord: Vector2i = Vector2i(7,5)
 
 
-@export var spreadTime = 0.2
+@export var spreadTime = 1
 const mapSize = Vector2(40, 22)
 var atlasCoordsArray = Vector2i(randf_range(0, 3), randf_range(0,3))
 var spawnerNumProbability = [1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,4,4,5]
@@ -32,7 +32,7 @@ func _ready():
 		dungeon = TileMap.new()
 		dungeon.set_rendering_quadrant_size(dungeon_tile_size.x)
 	$Timer.start(spreadTime)
-	cellType = Vector2i(0,0)
+	cellType = Vector2i(2,0)
 	#generate_apathy_seeds()
 	
 
@@ -61,12 +61,12 @@ func cell_spreader():
 			#print_debug(dungeon.get_cell_atlas_coords(0,dungeon_tile_position))
 			#print_debug(str("Apathy Tile ",nearCell," on Dungeon Tile ",dungeon_tile_position))
 			
-	if apathyScore > 300 and apathyScore < 600:
+	if apathyScore > 100 and apathyScore < 300:
 		cellType = Vector2i(1,0)
-		spreadTime = 2
-	elif apathyScore >= 600:
-		cellType = Vector2i(2,0)
-		spreadTime = 6
+		spreadTime = 4
+	elif apathyScore >= 450:
+		cellType = Vector2i(0,0)
+		spreadTime = 8
 
 func _process(delta):
 	cellsHit = Vector2i(Global.cellsHit.x, Global.cellsHit.y)

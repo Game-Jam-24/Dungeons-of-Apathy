@@ -6,6 +6,7 @@ var apathyTilemap: TileMap
 #var cell
 #var tile_id
 
+var dead = false
 var speed = Player.speed
 var accel = Player.movementAcceleration
 var stamina = Player.stamina
@@ -25,6 +26,7 @@ func _ready():
 	$ApathyDamageTicker.start(0.1)
 	apathyTilemap = get_parent().get_parent().get_node("Apathy")
 	Global.artifactStaminaRunout = false
+	
 
 func get_input():
 	
@@ -34,11 +36,16 @@ func get_input():
 	if Input.is_action_just_pressed("ui_dash") and stamina >= 30 and $DashDuration.is_stopped():
 		stamina -= 30
 		$DashDuration.start(0.2)
-	
 	if Input.get_action_strength("ui_sprint") and Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down"):
 		isSprinting = true
 	else:
 		isSprinting = false
+	
+	if !(Input.is_action_just_pressed("ui_dash") or Input.get_action_strength("ui_sprint")) and Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down"):
+		if !$Audio/Walking.playing:
+			$Audio/Walking.play()
+	else:
+		$Audio/Walking.stop()
 	
 	return input.normalized() #makes it so that when you go diagonally the speed doesn't stack
 
@@ -52,10 +59,13 @@ func _physics_process(delta):
 	
 	if stamina > 0 and isSprinting:
 		speed += 50
+		if !$Audio/Sprinting.playing:
+			$Audio/Sprinting.play()
 	elif stamina < 0:
 		stamina = 0
 	else:
 		speed -= 50
+		$Audio/Sprinting.stop()
 	
 	if !stopWalk:
 		$Sprite2D/AnimationTree.set("parameters/BlendSpace2D/blend_position", velocity)
@@ -80,7 +90,10 @@ func _physics_process(delta):
 func _process(delta):
 	
 	if health <= 0:
+		dead = true
 		Player.collectableCounter = 0
+		$Audio/Death.play()
+		await $Audio/Death.finished
 		get_tree().change_scene_to_file("res://Scenes/static_dungeon.tscn")
 	
 	if stamina <= 0:
@@ -94,6 +107,9 @@ func _process(delta):
 	
 	print_debug(stamina)
 	print_debug(health)
+	
+	if stamina > Player.stamina:
+		stamina = Player.stamina
 
 func _on_stamina_recovery_timeout():
 	if stamina < Player.maxStamina and !isSprinting and !Player.isInDash and !Global.isArtifactMorphed:
@@ -145,8 +161,10 @@ func _on_apathy_damage_ticker_timeout():
 	if tile1:
 		speed -= 100
 		health -= 1
+		$Audio/BeingHit.play()
 	elif tile2:
 		speed -= 100
 		health -= 1
+		$Audio/BeingHit.play()
 	else:
 		speed = Player.speed
