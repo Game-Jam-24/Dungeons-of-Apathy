@@ -21,7 +21,7 @@ func _input(event):
 		$Timer.start(3)
 		animTrigger = true
 		$CollisionShape2D.queue_free()
-		$Sprite2D/AnimationPlayer.play("SpeedPowerup")
+		$AnimatedSprite2D/AnimationPlayer.play("SpeedPowerup")
 
 func _on_timer_timeout():
 	queue_free()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bm2qx6mw42r3c"]
 
 [ext_resource type="Script" path="res://Scripts/notePowerup.gd" id="1_u2kuv"]
-[ext_resource type="Texture2D" uid="uid://bhlxxeioblpvu" path="res://Assets/Sprites/Placeholders/Note Placeholder.png" id="2_s26cg"]
+[ext_resource type="SpriteFrames" uid="uid://6u2c0ax87avu" path="res://Assets/Sprites/Ghost.tres" id="2_hx4nj"]
 
 [sub_resource type="Animation" id="Animation_2gxeq"]
 length = 0.001
@@ -49,13 +49,16 @@ outline_size = 1
 outline_color = Color(0, 0, 0, 1)
 
 [node name="PickUp" type="Area2D"]
+texture_filter = 1
 script = ExtResource("1_u2kuv")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_s26cg")
+scale = Vector2(1.5, 1.5)
+sprite_frames = ExtResource("2_hx4nj")
+frame_progress = 0.481119
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_bq0b2")

@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://6u2c0ax87avu"]
+
+[ext_resource type="Texture2D" uid="uid://bltocvoce334r" path="res://Assets/Sprites/ghost power up thingy.png" id="1_0lv23"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ve5kn"]
+atlas = ExtResource("1_0lv23")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o80o5"]
+atlas = ExtResource("1_0lv23")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e30rd"]
+atlas = ExtResource("1_0lv23")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8q0v2"]
+atlas = ExtResource("1_0lv23")
+region = Rect2(96, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ve5kn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o80o5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e30rd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8q0v2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

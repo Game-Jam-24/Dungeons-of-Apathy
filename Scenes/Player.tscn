@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://v0u41itefgbv" path="res://Assets/Music/Sfx/Player Sfx/Death sfx.wav" id="10_6ji6j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4kije"]
+font_size = 12
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
@@ -175,6 +176,7 @@ script = ExtResource("2_88ef5")
 
 [node name="HealthBar" type="ProgressBar" parent="HUD"]
 self_modulate = Color(0.745098, 0, 0, 1)
+texture_filter = 1
 offset_left = 32.0
 offset_top = 32.0
 offset_right = 192.0
@@ -199,23 +201,26 @@ vertical_alignment = 1
 
 [node name="StaminaBar" type="ProgressBar" parent="HUD"]
 self_modulate = Color(0.568627, 1, 1, 1)
+texture_filter = 1
 offset_left = 32.0
 offset_top = 57.0
 offset_right = 192.0
 offset_bottom = 67.0
 show_percentage = false
 
-[node name="LoreCounter" type="Label" parent="HUD"]
+[node name="SoulCounter" type="Label" parent="HUD"]
+texture_filter = 1
 offset_left = 32.0
 offset_top = 64.0
 offset_right = 122.0
 offset_bottom = 87.0
-text = "Lore Collected: "
+text = "Souls Saved: "
 label_settings = SubResource("LabelSettings_qq06b")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Counter" type="Label" parent="HUD/LoreCounter"]
+[node name="Counter" type="Label" parent="HUD/SoulCounter"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 96.0
 offset_right = 160.0
@@ -226,6 +231,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
 offset_left = -512.0
 offset_top = -288.0
 offset_right = 541.0
