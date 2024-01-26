@@ -157,36 +157,13 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="PCIcon" type="TextureRect" parent="Tutorial/Aiming"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 0
-offset_left = 243.0
-offset_top = -834.0
-offset_right = 283.0
-offset_bottom = -794.0
-expand_mode = 1
-script = ExtResource("6_sk3nw")
-show_only = 1
-
-[node name="ContIcon" type="TextureRect" parent="Tutorial/Aiming"]
-visible = false
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 0
-offset_left = 243.0
-offset_top = -834.0
-offset_right = 283.0
-offset_bottom = -794.0
-expand_mode = 1
-script = ExtResource("6_sk3nw")
-show_only = 2
-
 [node name="Label" type="Label" parent="Tutorial/Aiming"]
 layout_mode = 0
-offset_left = 287.0
-offset_top = -828.0
-offset_right = 338.0
+offset_left = 256.0
+offset_top = -864.0
+offset_right = 352.0
 offset_bottom = -798.0
-text = "to Aim."
+text = "Use mouse or right joystick to Aim."
 label_settings = SubResource("LabelSettings_4emvq")
 horizontal_alignment = 1
 vertical_alignment = 1

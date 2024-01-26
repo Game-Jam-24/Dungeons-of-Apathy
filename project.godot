@@ -28,6 +28,10 @@ Hub="*res://Scripts/Singletons/hub.gd"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 
+[dotnet]
+
+project/assembly_name="Pirate Game Jam"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/controller_icons/plugin.cfg")
