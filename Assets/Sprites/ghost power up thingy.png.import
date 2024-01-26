@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drrrjah2w7eva"
-path="res://.godot/imported/main hub world.png-4f77ca9e2f0348976749a42fb7fc59e7.ctex"
+uid="uid://bltocvoce334r"
+path="res://.godot/imported/ghost power up thingy.png-f9c7eaf46b50db7583415b0956d87db0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/main hub world.png"
-dest_files=["res://.godot/imported/main hub world.png-4f77ca9e2f0348976749a42fb7fc59e7.ctex"]
+source_file="res://Assets/Sprites/ghost power up thingy.png"
+dest_files=["res://.godot/imported/ghost power up thingy.png-f9c7eaf46b50db7583415b0956d87db0.ctex"]
 
 [params]
 
