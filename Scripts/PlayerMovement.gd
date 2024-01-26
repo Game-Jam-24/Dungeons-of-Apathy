@@ -36,6 +36,7 @@ func get_input():
 	if Input.is_action_just_pressed("ui_dash") and stamina >= 30 and $DashDuration.is_stopped():
 		stamina -= 30
 		$DashDuration.start(0.2)
+		$Audio/Dash.play()
 	if Input.get_action_strength("ui_sprint") and Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down"):
 		isSprinting = true
 	else:
@@ -48,6 +49,13 @@ func get_input():
 		$Audio/Walking.stop()
 	
 	return input.normalized() #makes it so that when you go diagonally the speed doesn't stack
+
+func player_death():
+	if dead == true:
+		Player.collectableCounter = 0
+		$Audio/Death.play()
+		await $Audio/Death.finished
+		get_tree().change_scene_to_file("res://Scenes/static_dungeon.tscn")
 
 func _physics_process(delta):
 	move_and_slide() #allows the player to move and to be able to slide along colliders (walls)
@@ -88,13 +96,9 @@ func _physics_process(delta):
 		Global.artifactStaminaRunout = false
 
 func _process(delta):
-	
 	if health <= 0:
 		dead = true
-		Player.collectableCounter = 0
-		$Audio/Death.play()
-		await $Audio/Death.finished
-		get_tree().change_scene_to_file("res://Scenes/static_dungeon.tscn")
+		player_death()
 	
 	if stamina <= 0:
 		Global.artifactStaminaRunout = true
@@ -104,9 +108,6 @@ func _process(delta):
 	velocity = lerp(velocity, input * speed, delta * accel) #smooths out the movement
 	
 	speed = Player.speed
-	
-	print_debug(stamina)
-	print_debug(health)
 	
 	if stamina > Player.stamina:
 		stamina = Player.stamina
