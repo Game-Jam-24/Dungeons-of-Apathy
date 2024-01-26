@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drrrjah2w7eva"
-path="res://.godot/imported/main hub world.png-4f77ca9e2f0348976749a42fb7fc59e7.ctex"
+uid="uid://c5y2muwt3qypr"
+path="res://.godot/imported/logo.png-d03fba62c7db4186a5557663390ad40b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/main hub world.png"
-dest_files=["res://.godot/imported/main hub world.png-4f77ca9e2f0348976749a42fb7fc59e7.ctex"]
+source_file="res://Assets/logo.png"
+dest_files=["res://.godot/imported/logo.png-d03fba62c7db4186a5557663390ad40b.ctex"]
 
 [params]
 
