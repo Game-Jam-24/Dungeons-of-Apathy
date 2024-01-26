@@ -16,6 +16,7 @@ func _on_body_exited(body):
 
 func _input(event):
 	if collision == true and Input.is_action_just_pressed("ui_powerup_pickup") == true:
+		Player.collectableCounter += 1
 		print_debug("It worked my guy")
 		$Timer.start(3)
 		animTrigger = true

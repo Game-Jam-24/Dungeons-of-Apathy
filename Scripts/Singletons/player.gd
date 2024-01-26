@@ -9,3 +9,5 @@ var maxHealth: int = 100
 var health: int = maxHealth
 var maxStamina: int = 100
 var stamina: int = maxStamina
+
+var collectableCounter: int = 0

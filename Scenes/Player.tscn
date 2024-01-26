@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://clio0lmaj01p2"]
+[gd_scene load_steps=24 format=3 uid="uid://clio0lmaj01p2"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_s5sor"]
 [ext_resource type="Script" path="res://Scripts/PlayerHUD.gd" id="2_88ef5"]
@@ -9,6 +9,11 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_4kije"]
 outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qq06b"]
+font_size = 12
+outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_3vg1k"]
@@ -167,7 +172,7 @@ script = ExtResource("2_88ef5")
 [node name="HealthBar" type="ProgressBar" parent="HUD"]
 offset_left = 32.0
 offset_top = 32.0
-offset_right = 128.0
+offset_right = 192.0
 offset_bottom = 56.0
 show_percentage = false
 
@@ -178,9 +183,9 @@ anchor_left = -0.333
 anchor_top = -1.0
 anchor_right = -0.333
 anchor_bottom = -1.0
-offset_left = 31.968
+offset_left = 53.28
 offset_top = 24.0
-offset_right = 127.968
+offset_right = 213.28
 offset_bottom = 48.0
 text = "Health"
 label_settings = SubResource("LabelSettings_4kije")
@@ -190,11 +195,31 @@ vertical_alignment = 1
 [node name="StaminaBar" type="ProgressBar" parent="HUD"]
 offset_left = 32.0
 offset_top = 57.0
-offset_right = 128.0
+offset_right = 192.0
 offset_bottom = 64.0
 show_percentage = false
 
+[node name="LoreCounter" type="Label" parent="HUD"]
+offset_left = 32.0
+offset_top = 64.0
+offset_right = 122.0
+offset_bottom = 87.0
+text = "Lore Collected: "
+label_settings = SubResource("LabelSettings_qq06b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Counter" type="Label" parent="HUD/LoreCounter"]
+offset_left = 96.0
+offset_right = 160.0
+offset_bottom = 23.0
+text = "0"
+label_settings = SubResource("LabelSettings_qq06b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 offset_left = -512.0
 offset_top = -288.0
 offset_right = 541.0

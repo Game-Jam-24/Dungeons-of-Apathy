@@ -80,6 +80,7 @@ func _physics_process(delta):
 func _process(delta):
 	
 	if health <= 0:
+		Player.collectableCounter = 0
 		get_tree().change_scene_to_file("res://Scenes/static_dungeon.tscn")
 	
 	if stamina <= 0:

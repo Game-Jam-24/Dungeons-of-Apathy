@@ -11,22 +11,26 @@ config_version=5
 [application]
 
 config/name="Pirate Game Jam"
-run/main_scene="res://Scenes/hub.tscn"
+run/main_scene="res://Scenes/static_dungeon.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
+ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
 Level="*res://Scripts/Singletons/level.gd"
 Global="*res://Scripts/Singletons/global.gd"
 Player="*res://Scripts/Singletons/player.gd"
 Hub="*res://Scripts/Singletons/hub.gd"
-SceneManager="*res://Scripts/Singletons/scenemanager.gd"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/controller_icons/plugin.cfg")
 
 [input]
 
