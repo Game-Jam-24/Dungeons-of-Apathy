@@ -96,8 +96,8 @@ func _process(delta):
 	print_debug(health)
 
 func _on_stamina_recovery_timeout():
-	if stamina < 100 and !isSprinting and !Player.isInDash and !Global.isArtifactMorphed:
-		stamina += 1
+	if stamina < Player.maxStamina and !isSprinting and !Player.isInDash and !Global.isArtifactMorphed:
+		stamina += 4
 
 func _on_dash_duration_timeout():
 	Player.isInDash = false
