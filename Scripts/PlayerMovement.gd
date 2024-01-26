@@ -57,7 +57,8 @@ func get_input():
 func player_death():
 	if dead == true:
 		Player.collectableCounter = 0
-		get_tree().change_scene_to_file("res://Death.tscn")
+		get_tree().reload_current_scene()
+		#get_tree().change_scene_to_file("res://Death.tscn")
 
 func _physics_process(delta):
 	move_and_slide() #allows the player to move and to be able to slide along colliders (walls)
