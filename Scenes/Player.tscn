@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://clio0lmaj01p2"]
+[gd_scene load_steps=30 format=3 uid="uid://clio0lmaj01p2"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_s5sor"]
 [ext_resource type="Script" path="res://Scripts/PlayerHUD.gd" id="2_88ef5"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://qtumsqayefd2" path="res://Assets/Music/Sfx/Player Sfx/Sprinting.wav" id="9_qscoy"]
 [ext_resource type="AudioStream" uid="uid://v0u41itefgbv" path="res://Assets/Music/Sfx/Player Sfx/Death sfx.wav" id="10_6ji6j"]
 [ext_resource type="AudioStream" uid="uid://du85gks7c013k" path="res://Assets/Music/Sfx/Player Sfx/Dash.wav" id="11_o3db0"]
+[ext_resource type="Texture2D" uid="uid://dktlp4ua1e13l" path="res://Assets/Shaders/circle.png" id="12_eb507"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4kije"]
 font_size = 12
@@ -232,6 +233,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 texture_filter = 1
 offset_left = -512.0
 offset_top = -288.0
@@ -297,6 +299,7 @@ shape = SubResource("RectangleShape2D_mcunu")
 
 [node name="Walking" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("7_m6xyv")
+volume_db = -15.0
 
 [node name="BeingHit" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("8_1ryd8")
@@ -305,7 +308,7 @@ pitch_scale = 0.82
 
 [node name="Sprinting" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("9_qscoy")
-volume_db = -7.0
+volume_db = -13.0
 autoplay = true
 
 [node name="Death" type="AudioStreamPlayer2D" parent="Audio"]
@@ -314,7 +317,11 @@ volume_db = -3.0
 
 [node name="Dash" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("11_o3db0")
-volume_db = -7.0
+volume_db = -8.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 1.5
+texture = ExtResource("12_eb507")
 
 [connection signal="timeout" from="StaminaRecovery" to="." method="_on_stamina_recovery_timeout"]
 [connection signal="timeout" from="DashDuration" to="." method="_on_dash_duration_timeout"]

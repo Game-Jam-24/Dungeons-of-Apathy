@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://qnp1arl2bgof"]
+[gd_scene load_steps=44 format=3 uid="uid://qnp1arl2bgof"]
 
 [ext_resource type="Texture2D" uid="uid://r8phorpx7tml" path="res://Assets/Animations/Artifact/Artifact animation/Artifact animation_0001.png" id="1_5cld1"]
 [ext_resource type="Texture2D" uid="uid://mc5h3hsdiqq6" path="res://Assets/Animations/Artifact/Artifact animation/Artifact animation_0002.png" id="2_55ffl"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://kbheldh1xd1u" path="res://Assets/Animations/Artifact/Artifact Weapons/SwordMorph_0010.png" id="29_nc62x"]
 [ext_resource type="Texture2D" uid="uid://003doi6n0vuh" path="res://Assets/Sprites/ParticleTextures/FireParticlesTexture2.png" id="32_qij7x"]
 [ext_resource type="AudioStream" uid="uid://coob8uqv0w2fm" path="res://Assets/Music/Sfx/Player Sfx/Hitting.wav" id="33_vbxd2"]
+[ext_resource type="Texture2D" uid="uid://dktlp4ua1e13l" path="res://Assets/Shaders/circle.png" id="34_1ol12"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f3y8k"]
 animations = [{
@@ -219,6 +220,11 @@ scale = Vector2(8, 8)
 amount = 30
 process_material = SubResource("ParticleProcessMaterial_vk4vt")
 texture = ExtResource("32_qij7x")
+
+[node name="PointLight2D" type="PointLight2D" parent="Artifact"]
+texture = ExtResource("34_1ol12")
+offset = Vector2(32, 0)
+texture_scale = 0.2
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

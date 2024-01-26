@@ -6,6 +6,8 @@ var apathyTilemap: TileMap
 #var cell
 #var tile_id
 
+var onApathyArray = []
+
 var dead = false
 var speed = Player.speed
 var accel = Player.movementAcceleration
@@ -17,6 +19,7 @@ var stopWalk = false
 var tile1: bool
 var tile2: bool
 var tile3: bool
+var isOnApathy: bool = false
 var apathyLayerID = 0
 
 func _ready():
@@ -42,8 +45,9 @@ func get_input():
 	else:
 		isSprinting = false
 	
-	if !(Input.is_action_just_pressed("ui_dash") or Input.get_action_strength("ui_sprint")) and Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down"):
+	if !(Input.is_action_just_pressed("ui_dash") or Input.get_action_strength("ui_sprint")) and Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") and !Global.isArtifactMorphed:
 		if !$Audio/Walking.playing:
+			$Audio/Walking.pitch_scale = randf_range(0.9, 1.1)
 			$Audio/Walking.play()
 	else:
 		$Audio/Walking.stop()
@@ -67,7 +71,8 @@ func _physics_process(delta):
 	
 	if stamina > 0 and isSprinting:
 		speed += 50
-		if !$Audio/Sprinting.playing:
+		if !$Audio/Sprinting.playing and !Global.isArtifactMorphed:
+			$Audio/Sprinting.pitch_scale = randf_range(0.9, 1.1)
 			$Audio/Sprinting.play()
 	elif stamina < 0:
 		stamina = 0
@@ -96,7 +101,7 @@ func _physics_process(delta):
 		Global.artifactStaminaRunout = false
 
 func _process(delta):
-	if health <= 0:
+	if health <= 0 and dead == false:
 		dead = true
 		player_death()
 	
@@ -142,30 +147,47 @@ func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shap
 		if body.is_in_group("Apathy"):
 			if _apathy_colission(body, body_rid).back() == 1:
 				tile1 = true
+				isOnApathy = true
+				onApathyArray.append(_apathy_colission(body, body_rid).back())
 			if _apathy_colission(body, body_rid).back() == 2:
 				tile2 = true
+				isOnApathy = true
+				onApathyArray.append(_apathy_colission(body, body_rid).back())
 			if _apathy_colission(body, body_rid).back() == 3:
 				tile3 = true
+				isOnApathy = true
+				onApathyArray.append(_apathy_colission(body, body_rid).back())
 
 func _on_area_2d_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
 	if !Global.isArtifactMorphed:
 		if body.is_in_group("Apathy"):
 			if _apathy_colission(body, body_rid).back() == 1:
 				tile1 = false
+				isOnApathy = false
+				onApathyArray.erase(_apathy_colission(body, body_rid).back())
 			if _apathy_colission(body, body_rid).back() == 2:
 				tile2 = false
+				isOnApathy = false
+				onApathyArray.erase(_apathy_colission(body, body_rid).back())
 			if _apathy_colission(body, body_rid).back() == 3:
 				tile3 = false
+				isOnApathy = false
+				onApathyArray.erase(_apathy_colission(body, body_rid).back())
 
 
 func _on_apathy_damage_ticker_timeout():
-	if tile1:
-		speed -= 100
-		health -= 1
-		$Audio/BeingHit.play()
-	elif tile2:
-		speed -= 100
-		health -= 1
-		$Audio/BeingHit.play()
-	else:
-		speed = Player.speed
+	if !onApathyArray.is_empty():
+		if onApathyArray.max() < 2:
+			speed -= 100
+			health -= 1
+			$Audio/BeingHit.play()
+		elif onApathyArray.max() == 2:
+			speed -= 200
+			health -= 4
+			$Audio/BeingHit.play()
+		elif onApathyArray.max() == 3:
+			speed -= 500
+			health -= 6
+		else:
+			speed = Player.speed
+	print_debug(onApathyArray)
