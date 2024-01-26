@@ -1,10 +1,15 @@
-[gd_scene load_steps=21 format=3 uid="uid://clio0lmaj01p2"]
+[gd_scene load_steps=23 format=3 uid="uid://clio0lmaj01p2"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_s5sor"]
+[ext_resource type="Script" path="res://Scripts/PlayerHUD.gd" id="2_88ef5"]
 [ext_resource type="Texture2D" uid="uid://rfruj2r0pl1a" path="res://Assets/Sprites/hero/hero sprite sheet.png" id="2_isv80"]
 [ext_resource type="PackedScene" uid="uid://qnp1arl2bgof" path="res://Scenes/Artifact.tscn" id="3_ti04h"]
 [ext_resource type="PackedScene" uid="uid://byntgwjgvfdmc" path="res://MouseCursor.tscn" id="4_jd3te"]
 [ext_resource type="Texture2D" uid="uid://dvxieijojbh2k" path="res://Assets/Sprites/Fog of war.png" id="5_xg86l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4kije"]
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_3vg1k"]
 length = 0.001
@@ -151,16 +156,49 @@ height = 28.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mcunu"]
 size = Vector2(13, 7)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_s5sor")
 
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("2_88ef5")
+
+[node name="HealthBar" type="ProgressBar" parent="HUD"]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 128.0
+offset_bottom = 56.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="HUD/HealthBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.333
+anchor_top = -1.0
+anchor_right = -0.333
+anchor_bottom = -1.0
+offset_left = 31.968
+offset_top = 24.0
+offset_right = 127.968
+offset_bottom = 48.0
+text = "Health"
+label_settings = SubResource("LabelSettings_4kije")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StaminaBar" type="ProgressBar" parent="HUD"]
+offset_left = 32.0
+offset_top = 57.0
+offset_right = 128.0
+offset_bottom = 64.0
+show_percentage = false
+
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -528.0
-offset_top = -290.0
-offset_right = 525.0
-offset_bottom = 320.0
+offset_left = -512.0
+offset_top = -288.0
+offset_right = 541.0
+offset_bottom = 322.0
 texture = ExtResource("5_xg86l")
 expand_mode = 2
 
