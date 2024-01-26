@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bg1hp0qwjru3t"]
+[gd_scene load_steps=17 format=3 uid="uid://bg1hp0qwjru3t"]
 
 [ext_resource type="PackedScene" uid="uid://clio0lmaj01p2" path="res://Scenes/Player.tscn" id="1_v4q00"]
 [ext_resource type="TileSet" uid="uid://bse1l4sygsqau" path="res://Assets/Tileset/lvl1tileset.tres" id="2_r78nv"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://puc614rf26im" path="res://addons/controller_icons/assets/key/arrow_left.png" id="8_0jo40"]
 [ext_resource type="Texture2D" uid="uid://coqj2fcsaxvcn" path="res://addons/controller_icons/assets/key/space.png" id="8_tixcp"]
 [ext_resource type="Texture2D" uid="uid://bbjc54bmpv3f8" path="res://addons/controller_icons/assets/key/arrow_right.png" id="9_wopc4"]
+[ext_resource type="Texture2D" uid="uid://dktlp4ua1e13l" path="res://Assets/Shaders/circle.png" id="10_4bi11"]
 [ext_resource type="Texture2D" uid="uid://b8vuy7l8npt6w" path="res://addons/controller_icons/assets/mouse/left.png" id="12_86oom"]
 [ext_resource type="Texture2D" uid="uid://xe4n818le3p8" path="res://addons/controller_icons/assets/key/e.png" id="15_4co4l"]
 [ext_resource type="PackedScene" uid="uid://bm2qx6mw42r3c" path="res://Scenes/NOTEPOWERUP.tscn" id="16_habuy"]
@@ -107,6 +108,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="PointLight2D" type="PointLight2D" parent="Tutorial/MoveButtons"]
+position = Vector2(20, 23)
+texture = ExtResource("10_4bi11")
+texture_scale = 0.3
+
 [node name="SprintButton" type="TextureRect" parent="Tutorial"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
@@ -130,6 +136,11 @@ label_settings = SubResource("LabelSettings_4emvq")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="PointLight2D" type="PointLight2D" parent="Tutorial/SprintButton"]
+position = Vector2(45, 21)
+texture = ExtResource("10_4bi11")
+texture_scale = 0.3
 
 [node name="DashButton" type="TextureRect" parent="Tutorial"]
 custom_minimum_size = Vector2(40, 40)
@@ -155,6 +166,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="PointLight2D" type="PointLight2D" parent="Tutorial/DashButton"]
+position = Vector2(45, 19)
+texture = ExtResource("10_4bi11")
+texture_scale = 0.3
+
 [node name="Aiming" type="Control" parent="Tutorial"]
 anchors_preset = 0
 offset_right = 40.0
@@ -171,6 +187,11 @@ label_settings = SubResource("LabelSettings_4emvq")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="PointLight2D" type="PointLight2D" parent="Tutorial/Aiming"]
+position = Vector2(288, -820)
+texture = ExtResource("10_4bi11")
+texture_scale = 0.3
 
 [node name="UseArtifact" type="TextureRect" parent="Tutorial"]
 custom_minimum_size = Vector2(40, 40)
@@ -197,6 +218,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="PointLight2D" type="PointLight2D" parent="Tutorial/UseArtifact"]
+position = Vector2(57, 15)
+texture = ExtResource("10_4bi11")
+texture_scale = 0.3
+
 [node name="Interact" type="TextureRect" parent="Tutorial"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
@@ -221,6 +247,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="PointLight2D" type="PointLight2D" parent="Tutorial/Interact"]
+position = Vector2(74, 24)
+texture = ExtResource("10_4bi11")
+texture_scale = 0.4
+
 [node name="Apathy2" type="Label" parent="Tutorial"]
 layout_mode = 0
 offset_left = 41.0
@@ -233,6 +264,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="PointLight2D" type="PointLight2D" parent="Tutorial/Apathy2"]
+position = Vector2(35, 51)
+texture = ExtResource("10_4bi11")
+texture_scale = 0.3
+
 [node name="Apathy" type="Label" parent="Tutorial"]
 layout_mode = 0
 offset_left = 242.0
@@ -244,6 +280,11 @@ label_settings = SubResource("LabelSettings_4emvq")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="PointLight2D" type="PointLight2D" parent="Tutorial/Apathy"]
+position = Vector2(38, 53)
+texture = ExtResource("10_4bi11")
+texture_scale = 0.3
 
 [node name="Collectibles" type="Node" parent="."]
 
