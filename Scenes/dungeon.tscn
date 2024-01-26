@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dksitk5onvtpb"]
 
-[ext_resource type="Script" path="res://Scripts/dungeon.gd" id="1_dl4sq"]
+[ext_resource type="Script" path="res://Scripts/defunct/dungeon.gd" id="1_dl4sq"]
 [ext_resource type="TileSet" uid="uid://b80oj70dj3fip" path="res://Assets/Tileset/SimpleTileset.tres" id="1_xi1ij"]
 
 [node name="Dungeon" type="Node2D"]
