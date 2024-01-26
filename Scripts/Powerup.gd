@@ -4,8 +4,7 @@ var animTrigger = false
 
 func _on_body_entered(body):
 	if !Player.isInDash:
-		Player.speed += 200
-		Player.movementAcceleration += 100
+		Player.speed += 150
 		$Timer.start(2)
 		animTrigger = true
 		$CollisionShape2D.queue_free()
@@ -13,8 +12,7 @@ func _on_body_entered(body):
 		$AnimatedSprite2D.hide()
 
 func _on_timer_timeout():
-	Player.speed -= 200
-	Player.movementAcceleration -= 100
+	Player.speed -= 150
 	queue_free()
 
 func _process(delta):

@@ -67,6 +67,8 @@ func cell_spreader():
 	elif apathyScore >= 450:
 		cellType = Vector2i(0,0)
 		spreadTime = 8
+	elif apathyScore > 777:
+		spreadTime = 999999
 
 func _process(delta):
 	cellsHit = Vector2i(Global.cellsHit.x, Global.cellsHit.y)
