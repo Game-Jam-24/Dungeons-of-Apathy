@@ -32,7 +32,7 @@ func _ready():
 		dungeon = TileMap.new()
 		dungeon.set_rendering_quadrant_size(dungeon_tile_size.x)
 	$Timer.start(spreadTime)
-	cellType = Vector2i(2,0)
+	cellType = Vector2i(0,2)
 	#generate_apathy_seeds()
 	
 
@@ -54,15 +54,15 @@ func cell_spreader():
 			# Proceed if the dungeon tile is a floor. this check is made by comparing the atlas coords of the tile position to a defined atlas coord that represents a floor.
 			if dungeon.get_cell_atlas_coords(0,dungeon_tile_position) == dungeon_floor_atlas_coord:
 				# Proceed by a % chance and if the cell referenced isn't already occupied by apathy.
-				if randf_range(0, 100) <= 50 and tilemap.get_cell_source_id(0, nearCell) != 2:
-					tilemap.set_cell(0, nearCell, 2, cellType)
+				if randf_range(0, 100) <= 50 and tilemap.get_cell_source_id(0, nearCell) != 1:
+					tilemap.set_cell(0, nearCell, 1, cellType)
 					#print_debug(apathyScore)
 			
 			#print_debug(dungeon.get_cell_atlas_coords(0,dungeon_tile_position))
 			#print_debug(str("Apathy Tile ",nearCell," on Dungeon Tile ",dungeon_tile_position))
 			
 	if apathyScore > 100 and apathyScore < 300:
-		cellType = Vector2i(1,0)
+		cellType = Vector2i(0,1)
 		spreadTime = 4
 	elif apathyScore >= 450:
 		cellType = Vector2i(0,0)

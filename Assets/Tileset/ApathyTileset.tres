@@ -1,6 +1,59 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://ddws2rc0rk5gk"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://eq4ur6qottco"]
 
 [ext_resource type="Texture2D" uid="uid://cri5b3l8pt3f4" path="res://Assets/Tileset/ApathyTestSheet.png" id="1_hcas2"]
+[ext_resource type="Texture2D" uid="uid://btavvqsse4m1y" path="res://Assets/Tileset/apatthy.png" id="1_l0dhr"]
+[ext_resource type="Texture2D" uid="uid://ed24ej2qjrry" path="res://Assets/Tileset/apathy tileset basic 32 by 32.png" id="2_hdoli"]
+[ext_resource type="Texture2D" uid="uid://ca5h4o52cdq7f" path="res://Assets/Tileset/apathy tilset basic 16 by 16.png" id="4_l8bfh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_meomt"]
+resource_name = "Apathy"
+texture = ExtResource("1_l0dhr")
+texture_region_size = Vector2i(32, 32)
+0:0/animation_columns = 8
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h5uqb"]
+resource_name = "ApathyAnim32"
+texture = ExtResource("2_hdoli")
+texture_region_size = Vector2i(32, 32)
+0:0/animation_columns = 9
+0:0/animation_frame_0/duration = 0.2
+0:0/animation_frame_1/duration = 0.2
+0:0/animation_frame_2/duration = 0.2
+0:0/animation_frame_3/duration = 0.2
+0:0/animation_frame_4/duration = 0.2
+0:0/animation_frame_5/duration = 0.2
+0:0/animation_frame_6/duration = 0.2
+0:0/animation_frame_7/duration = 0.2
+0:0/animation_frame_8/duration = 0.2
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/custom_data_0 = 1
+0:1/animation_columns = 7
+0:1/animation_frame_0/duration = 0.2
+0:1/animation_frame_1/duration = 0.2
+0:1/animation_frame_2/duration = 0.2
+0:1/animation_frame_3/duration = 0.2
+0:1/animation_frame_4/duration = 0.2
+0:1/animation_frame_5/duration = 0.2
+0:1/animation_frame_6/duration = 0.2
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/custom_data_0 = 2
+0:2/animation_columns = 5
+0:2/animation_frame_0/duration = 0.2
+0:2/animation_frame_1/duration = 0.21
+0:2/animation_frame_2/duration = 0.2
+0:2/animation_frame_3/duration = 0.2
+0:2/animation_frame_4/duration = 0.2
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/custom_data_0 = 3
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c4g7m"]
 texture = ExtResource("1_hcas2")
@@ -20,9 +73,26 @@ texture = ExtResource("1_hcas2")
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0/custom_data_0 = 3
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i0gsm"]
+resource_name = "ApathyAnim16"
+texture = ExtResource("4_l8bfh")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+
 [resource]
+tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 4
 custom_data_layer_0/name = "ApathyType"
 custom_data_layer_0/type = 2
 sources/2 = SubResource("TileSetAtlasSource_c4g7m")
+sources/0 = SubResource("TileSetAtlasSource_meomt")
+sources/1 = SubResource("TileSetAtlasSource_h5uqb")
+sources/3 = SubResource("TileSetAtlasSource_i0gsm")

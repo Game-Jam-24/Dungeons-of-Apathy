@@ -5,11 +5,12 @@
 
 [node name="Apathy" type="TileMap" groups=["Apathy"]]
 texture_filter = 1
+scale = Vector2(0.5, 0.5)
 tile_set = ExtResource("1_rugsi")
 rendering_quadrant_size = 4
 format = 2
 layer_0/name = "Spread"
-layer_0/tile_data = PackedInt32Array(196612, 2, 0)
+layer_0/tile_data = PackedInt32Array(196616, 1, 0, 262153, 1, 1, 327690, 1, 2)
 script = ExtResource("2_x01kh")
 
 [node name="Timer" type="Timer" parent="."]
