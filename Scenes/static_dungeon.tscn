@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://clio0lmaj01p2" path="res://Scenes/Player.tscn" id="1_v4q00"]
 [ext_resource type="TileSet" uid="uid://bse1l4sygsqau" path="res://Assets/Tileset/lvl1tileset.tres" id="2_r78nv"]
 [ext_resource type="PackedScene" uid="uid://cdkubo21s3djc" path="res://Scenes/Powerup.tscn" id="3_gp6ci"]
-[ext_resource type="PackedScene" uid="uid://dfeaqclcgyts1" path="res://Scenes/Apathy.tscn" id="3_gt1ra"]
+[ext_resource type="PackedScene" uid="uid://dbqg133v8wt4j" path="res://Scenes/Apathy.tscn" id="3_gt1ra"]
 [ext_resource type="Texture2D" uid="uid://cge2w6yy0r2cx" path="res://addons/controller_icons/assets/key/arrow_down.png" id="5_3kyds"]
 [ext_resource type="Script" path="res://addons/controller_icons/objects/TextureRect.gd" id="6_sk3nw"]
 [ext_resource type="Texture2D" uid="uid://d04bqc5v3befo" path="res://addons/controller_icons/assets/key/arrow_up.png" id="7_hoakq"]
