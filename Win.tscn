@@ -1,0 +1,135 @@
+[gd_scene load_steps=8 format=3 uid="uid://h4f2xlsmomyv"]
+
+[ext_resource type="Script" path="res://Death.gd" id="1_ncklb"]
+[ext_resource type="AudioStream" uid="uid://v0u41itefgbv" path="res://Assets/Music/Sfx/Player Sfx/Death sfx.wav" id="3_07oco"]
+[ext_resource type="Texture2D" uid="uid://coqj2fcsaxvcn" path="res://addons/controller_icons/assets/key/space.png" id="4_5gitr"]
+[ext_resource type="Script" path="res://addons/controller_icons/objects/TextureRect.gd" id="5_o2s2l"]
+[ext_resource type="Texture2D" uid="uid://xe4n818le3p8" path="res://addons/controller_icons/assets/key/e.png" id="6_icoo7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mrkhi"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_pip4f"]
+font_size = 128
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ncklb")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(6, 0)
+anchor_mode = 0
+zoom = Vector2(1.23, 1.23)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 322.0
+offset_top = 448.0
+offset_right = 754.0
+offset_bottom = 512.0
+text = "Press           to play again"
+label_settings = SubResource("LabelSettings_mrkhi")
+horizontal_alignment = 1
+
+[node name="Death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_07oco")
+volume_db = -3.0
+autoplay = true
+
+[node name="DashButton" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(80, 80)
+offset_left = 439.0
+offset_top = 432.0
+offset_right = 519.0
+offset_bottom = 512.0
+texture = ExtResource("4_5gitr")
+expand_mode = 1
+script = ExtResource("5_o2s2l")
+path = "ui_dash"
+max_width = 80
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 313.0
+offset_top = 512.0
+offset_right = 745.0
+offset_bottom = 576.0
+text = "Press         to leave"
+label_settings = SubResource("LabelSettings_mrkhi")
+horizontal_alignment = 1
+
+[node name="Interact" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(80, 80)
+offset_left = 470.0
+offset_top = 499.0
+offset_right = 550.0
+offset_bottom = 579.0
+texture = ExtResource("6_icoo7")
+expand_mode = 1
+script = ExtResource("5_o2s2l")
+path = "ui_powerup_pickup"
+max_width = 80
+
+[node name="You Won" type="Label" parent="."]
+texture_filter = 1
+offset_left = 228.0
+offset_top = -12.0
+offset_right = 795.0
+offset_bottom = 163.0
+text = "You won!"
+label_settings = SubResource("LabelSettings_pip4f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Thanks" type="Label" parent="."]
+offset_left = 256.0
+offset_top = 142.0
+offset_right = 768.0
+offset_bottom = 217.0
+text = "Thank you for playing our Game Jam prototype! We learned a lot in the process of making this little game, and appreciate you taking the time to play it!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="Thanks"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 114.0
+offset_right = 406.0
+offset_bottom = 137.0
+text = "DoctorNewton Lead/Management"
+horizontal_alignment = 3
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Thanks"]
+offset_left = 106.0
+offset_top = 146.0
+offset_right = 406.0
+offset_bottom = 169.0
+text = "Makerizms Developer/Artist"
+horizontal_alignment = 3
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Thanks"]
+offset_left = 106.0
+offset_top = 178.0
+offset_right = 406.0
+offset_bottom = 201.0
+text = "Henry Artist"
+horizontal_alignment = 3
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Thanks"]
+offset_left = 106.0
+offset_top = 210.0
+offset_right = 406.0
+offset_bottom = 233.0
+text = "Bark Music/SFX"
+horizontal_alignment = 3
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Thanks"]
+offset_left = 106.0
+offset_top = 242.0
+offset_right = 406.0
+offset_bottom = 265.0
+text = "Spoons Developer"
+horizontal_alignment = 3
+vertical_alignment = 1
