@@ -58,6 +58,10 @@ func player_death():
 	if dead == true:
 		Player.collectableCounter = 0
 		get_tree().change_scene_to_file("res://Death.tscn")
+		
+func player_win():
+	Player.collectableCounter = 0
+	get_tree().change_scene_to_file("res://Win.tscn")
 
 func _physics_process(delta):
 	move_and_slide() #allows the player to move and to be able to slide along colliders (walls)
@@ -100,7 +104,7 @@ func _physics_process(delta):
 
 func _process(delta):
 	if Player.collectableCounter >= Player.collectableMax:
-		pass
+		player_win()
 	
 	if health <= 0 and dead == false:
 		dead = true
