@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://bg1hp0qwjru3t"]
+[gd_scene load_steps=19 format=3 uid="uid://bg1hp0qwjru3t"]
 
+[ext_resource type="Script" path="res://Scenes/static_dungeon.gd" id="1_6unp2"]
 [ext_resource type="PackedScene" uid="uid://clio0lmaj01p2" path="res://Scenes/Player.tscn" id="1_v4q00"]
 [ext_resource type="TileSet" uid="uid://bse1l4sygsqau" path="res://Assets/Tileset/lvl1tileset.tres" id="2_r78nv"]
 [ext_resource type="PackedScene" uid="uid://cdkubo21s3djc" path="res://Scenes/Powerup.tscn" id="3_gp6ci"]
@@ -15,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b8vuy7l8npt6w" path="res://addons/controller_icons/assets/mouse/left.png" id="12_86oom"]
 [ext_resource type="Texture2D" uid="uid://xe4n818le3p8" path="res://addons/controller_icons/assets/key/e.png" id="15_4co4l"]
 [ext_resource type="PackedScene" uid="uid://bm2qx6mw42r3c" path="res://Scenes/NOTEPOWERUP.tscn" id="16_habuy"]
+[ext_resource type="AudioStream" uid="uid://cbiunj87rtywk" path="res://Assets/Music/Level/Level Idle 2.wav" id="16_k0703"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4emvq"]
 font_size = 12
@@ -22,6 +24,7 @@ outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
 [node name="StaticDungeon" type="Node2D"]
+script = ExtResource("1_6unp2")
 
 [node name="Player" parent="." instance=ExtResource("1_v4q00")]
 z_index = 1
@@ -309,3 +312,10 @@ position = Vector2(1997, 201)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 blend_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_k0703")
+volume_db = -9.0
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

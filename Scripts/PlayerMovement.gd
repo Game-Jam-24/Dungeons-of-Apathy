@@ -25,7 +25,7 @@ var apathyLayerID = 0
 func _ready():
 	$StaminaRecovery.start(0.17)
 	$SprintExhaustion.start(0.08)
-	$ArtifactUseExhaustion.start(0.1)
+	$ArtifactUseExhaustion.start(0.2)
 	$ApathyDamageTicker.start(0.1)
 	apathyTilemap = get_parent().get_parent().get_node("Apathy")
 	Global.artifactStaminaRunout = false

@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://byvv46gfvlh0f"]
+[gd_scene load_steps=9 format=3 uid="uid://byvv46gfvlh0f"]
 
+[ext_resource type="Script" path="res://HubWorld.gd" id="1_1btge"]
 [ext_resource type="Texture2D" uid="uid://bpvlnquy64kry" path="res://Assets/main hub world.png" id="1_fcvkq"]
 [ext_resource type="PackedScene" uid="uid://clio0lmaj01p2" path="res://Scenes/Player.tscn" id="2_c28nb"]
 [ext_resource type="Script" path="res://EnterLevel.gd" id="3_2pidv"]
+[ext_resource type="AudioStream" uid="uid://lv5sxrmpu65s" path="res://Assets/Music/Hub/Main Menu 2.wav" id="4_ksirw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_arxjv"]
 
@@ -13,6 +15,7 @@ font_size = 10
 size = Vector2(11, 4)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_1btge")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -2
@@ -107,4 +110,16 @@ position = Vector2(-37.5, -124)
 shape = SubResource("RectangleShape2D_07dt4")
 script = ExtResource("3_2pidv")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ksirw")
+volume_db = -7.0
+autoplay = true
+
+[node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ksirw")
+volume_db = -7.0
+autoplay = true
+
 [connection signal="body_entered" from="Area2D" to="Area2D/CollisionShape2D" method="_on_area_2d_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+[connection signal="finished" from="AudioStreamPlayer1" to="." method="_on_audio_stream_player_finished"]
