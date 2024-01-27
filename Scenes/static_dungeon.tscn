@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b8vuy7l8npt6w" path="res://addons/controller_icons/assets/mouse/left.png" id="12_86oom"]
 [ext_resource type="Texture2D" uid="uid://xe4n818le3p8" path="res://addons/controller_icons/assets/key/e.png" id="15_4co4l"]
 [ext_resource type="PackedScene" uid="uid://bm2qx6mw42r3c" path="res://Scenes/NOTEPOWERUP.tscn" id="16_habuy"]
-[ext_resource type="AudioStream" uid="uid://cbiunj87rtywk" path="res://Assets/Music/Level/Level Idle 2.wav" id="16_k0703"]
+[ext_resource type="AudioStream" uid="uid://dc0v3s4ebdbp4" path="res://Assets/Music/Level/Level Idle 2.wav" id="16_k0703"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4emvq"]
 font_size = 12
@@ -40,6 +40,7 @@ layer_0/tile_data = PackedInt32Array(655374, 262152, 5, 589838, 262152, 5, 52430
 layer_0/tile_data = PackedInt32Array(-1507257, 1, 2, 2425015, 1, 2, 655508, 1, 2, 2228313, 1, 2, 2621485, 1, 2, 2490376, 1, 2, 2490377, 1, 2, 2555912, 1, 2, 2555913, 1, 2, 1310853, 1, 2, 1376389, 1, 2, 1376388, 1, 2, 1310852, 1, 2, 262234, 1, 2, 327770, 1, 2, 327771, 1, 2, 262235, 1, 2, 1310729, 1, 2, 1310728, 1, 2, 590003, 1, 2)
 
 [node name="Powerup" parent="." instance=ExtResource("3_gp6ci")]
+visible = false
 position = Vector2(463, 587)
 
 [node name="Tutorial" type="Control" parent="."]
