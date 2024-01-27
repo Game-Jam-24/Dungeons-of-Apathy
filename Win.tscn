@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://h4f2xlsmomyv"]
 
 [ext_resource type="Script" path="res://Death.gd" id="1_ncklb"]
-[ext_resource type="AudioStream" uid="uid://v0u41itefgbv" path="res://Assets/Music/Sfx/Player Sfx/Death sfx.wav" id="3_07oco"]
+[ext_resource type="AudioStream" uid="uid://d3ksuqu2klom5" path="res://Assets/Music/Victory.wav" id="2_kvhgo"]
 [ext_resource type="Texture2D" uid="uid://coqj2fcsaxvcn" path="res://addons/controller_icons/assets/key/space.png" id="4_5gitr"]
 [ext_resource type="Script" path="res://addons/controller_icons/objects/TextureRect.gd" id="5_o2s2l"]
 [ext_resource type="Texture2D" uid="uid://xe4n818le3p8" path="res://addons/controller_icons/assets/key/e.png" id="6_icoo7"]
@@ -29,8 +29,8 @@ text = "Press           to play again"
 label_settings = SubResource("LabelSettings_mrkhi")
 horizontal_alignment = 1
 
-[node name="Death" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_07oco")
+[node name="Victory" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_kvhgo")
 volume_db = -3.0
 autoplay = true
 
