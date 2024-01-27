@@ -14,7 +14,7 @@ func _ready():
 func update():
 	healthBar.value = player.health
 	staminaBar.value = player.stamina
-	LoreCounter.text = str(Player.collectableCounter)
+	LoreCounter.text = str(Player.collectableCounter,"/",Player.collectableMax)
 
 func _process(_delta):
 	update()
