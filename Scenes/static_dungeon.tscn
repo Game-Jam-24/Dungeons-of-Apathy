@@ -1,9 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://bg1hp0qwjru3t"]
+[gd_scene load_steps=18 format=3 uid="uid://bg1hp0qwjru3t"]
 
 [ext_resource type="Script" path="res://Scenes/static_dungeon.gd" id="1_6unp2"]
 [ext_resource type="PackedScene" uid="uid://clio0lmaj01p2" path="res://Scenes/Player.tscn" id="1_v4q00"]
 [ext_resource type="TileSet" uid="uid://bse1l4sygsqau" path="res://Assets/Tileset/lvl1tileset.tres" id="2_r78nv"]
-[ext_resource type="PackedScene" uid="uid://cdkubo21s3djc" path="res://Scenes/Powerup.tscn" id="3_gp6ci"]
 [ext_resource type="PackedScene" uid="uid://dbqg133v8wt4j" path="res://Scenes/Apathy.tscn" id="3_gt1ra"]
 [ext_resource type="Texture2D" uid="uid://cge2w6yy0r2cx" path="res://addons/controller_icons/assets/key/arrow_down.png" id="5_3kyds"]
 [ext_resource type="Script" path="res://addons/controller_icons/objects/TextureRect.gd" id="6_sk3nw"]
@@ -38,10 +37,6 @@ layer_0/tile_data = PackedInt32Array(655374, 262152, 5, 589838, 262152, 5, 52430
 
 [node name="Apathy" parent="TileMap" instance=ExtResource("3_gt1ra")]
 layer_0/tile_data = PackedInt32Array(-1507257, 1, 2, 2425015, 1, 2, 655508, 1, 2, 2228313, 1, 2, 2621485, 1, 2, 2490376, 1, 2, 2490377, 1, 2, 2555912, 1, 2, 2555913, 1, 2, 1310853, 1, 2, 1376389, 1, 2, 1376388, 1, 2, 1310852, 1, 2, 262234, 1, 2, 327770, 1, 2, 327771, 1, 2, 262235, 1, 2, 1310729, 1, 2, 1310728, 1, 2, 590003, 1, 2)
-
-[node name="Powerup" parent="." instance=ExtResource("3_gp6ci")]
-visible = false
-position = Vector2(463, 587)
 
 [node name="Tutorial" type="Control" parent="."]
 texture_filter = 1
