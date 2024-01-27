@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Pirate Game Jam"
+config/name="Dungeons Of Apathy"
+config/version="0.3"
 run/main_scene="res://HubWorld.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Assets/logo.png"
 
 [autoload]
 
