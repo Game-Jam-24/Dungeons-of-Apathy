@@ -193,5 +193,6 @@ func _on_apathy_damage_ticker_timeout():
 		elif onApathyArray.max() == 3:
 			speed -= 500
 			health -= 6
+			$Audio/BeingHit.play()
 		else:
 			speed = Player.speed

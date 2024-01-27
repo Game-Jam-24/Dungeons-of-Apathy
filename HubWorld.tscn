@@ -110,16 +110,10 @@ position = Vector2(-37.5, -124)
 shape = SubResource("RectangleShape2D_07dt4")
 script = ExtResource("3_2pidv")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_ksirw")
-volume_db = -7.0
-autoplay = true
-
 [node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ksirw")
 volume_db = -7.0
 autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="Area2D/CollisionShape2D" method="_on_area_2d_body_entered"]
-[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
 [connection signal="finished" from="AudioStreamPlayer1" to="." method="_on_audio_stream_player_finished"]
